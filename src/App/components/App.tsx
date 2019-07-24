@@ -17,18 +17,27 @@ export default class App extends Component<AppProps> {
         this.props.initialize(translations);
     }
 
-    componentWillMount() {
+    public componentDidMount = async () => {
         if (!isServer) {
-            this.authenticate()
-                .then(() => this.getCurrentLanguage())
-                .then((language) => this.props.setActiveLanguage(language))
-                .catch((error) => {
-                    logger.error(error);
-                });
+            try {
+                await this.onDidMount();
+            } catch (error) {
+                logger.error(error);
+            }
         }
     }
 
-    authenticate = async (payload: AuthenticateSync = {}) => {
+    private onDidMount = async () => {
+        const authenticate = this.authenticate();
+        const setCurrentLanguage = this.setCurrentLanguage();
+
+        return {
+            authenticate: await authenticate,
+            setCurrentLanguage: await setCurrentLanguage
+        };
+    }
+
+    private authenticate = async (payload: AuthenticateSync = {}) => {
         return await new Promise((resolve, reject) => {
             this.props.authenticateSync(payload, {
                 onSuccess: resolve,
@@ -37,7 +46,13 @@ export default class App extends Component<AppProps> {
         });
     }
 
-    getCurrentLanguage = async () => {
+    private setCurrentLanguage = async () => {
+        const language = await this.getCurrentLanguage();
+
+        this.props.setActiveLanguage(language);
+    }
+
+    private getCurrentLanguage = async () => {
         return await new Promise<Language>((resolve, reject) => {
             this.props.getCurrentLanguageSync({
                 onSuccess: resolve,
@@ -46,7 +61,7 @@ export default class App extends Component<AppProps> {
         });
     }
 
-    render() {
+    public render = () => {
         return (
             <div id='app'>
                 <Routes />

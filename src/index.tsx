@@ -16,7 +16,7 @@ Amplify.configure({
     ...aws_exports,
     Auth: {
         cookieStorage: {
-            domain: '.rolecenter.com',
+            domain: '.librarian.world',
             secure: false
         }
     }

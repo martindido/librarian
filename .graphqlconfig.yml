@@ -1,14 +1,12 @@
 projects:
-  role:
-    schemaPath: src/App/graphql/schema.json
+  librarian:
+    schemaPath: src/graphql/schema.json
     includes:
       - src/App/graphql/**/*.ts
     excludes:
-      - amplify/**
+      - ./amplify/**
     extensions:
       amplify:
         codeGenTarget: typescript
         generatedFileName: src/App/types/GraphQL.ts
-        docsFilePath: src/App/graphql
-        graphQLApiId: ldwhxik6snfr3jie75y6lheed4
-        maxDepth: 4
+        docsFilePath: src/graphql

@@ -1,0 +1,6 @@
+{
+    "ignore": ["**/*.test.ts", "**/types/**/*", "**/mocks/**/*"],
+    "watch": ["package.json", "server"],
+    "exec": "node server",
+    "ext": "js,ts"
+}

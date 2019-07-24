@@ -2,17 +2,15 @@
 
 const awsmobile = {
     aws_project_region: 'us-east-1',
-    aws_content_delivery_bucket: 'role-20181027161358--hostingbucket',
-    aws_content_delivery_bucket_region: 'us-east-1',
-    aws_content_delivery_url: 'http://role-20181027161358--hostingbucket.s3-website-us-east-1.amazonaws.com',
-    aws_cognito_identity_pool_id: 'us-east-1:30757891-09be-4320-88c3-0e16bc783369',
+    aws_cognito_identity_pool_id: 'us-east-1:8bfa3991-34a3-4c6e-a04f-e4d1e225077d',
     aws_cognito_region: 'us-east-1',
-    aws_user_pools_id: 'us-east-1_gyBnaWgjl',
-    aws_user_pools_web_client_id: 'gud75q3oaj8r27q0lqgepb4ii',
-    aws_appsync_graphqlEndpoint: 'https://brazb3xh2rgidlri2inrcoomxu.appsync-api.us-east-1.amazonaws.com/graphql',
+    aws_user_pools_id: 'us-east-1_U1MursQ0j',
+    aws_user_pools_web_client_id: '6n4gp3t2sb3hih2j7romkf6u0b',
+    oauth: {},
+    aws_appsync_graphqlEndpoint: 'https://tf3fxm4r2nd6jjbamsdsywn2iq.appsync-api.us-east-1.amazonaws.com/graphql',
     aws_appsync_region: 'us-east-1',
     aws_appsync_authenticationType: 'AMAZON_COGNITO_USER_POOLS',
-    aws_user_files_s3_bucket: 'role-images',
+    aws_user_files_s3_bucket: 'librarian-images-dev',
     aws_user_files_s3_bucket_region: 'us-east-1'
 };
 

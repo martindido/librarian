@@ -17,17 +17,6 @@ export const createWorld = `mutation CreateWorld($input: CreateWorldInput!) {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -50,17 +39,6 @@ export const updateWorld = `mutation UpdateWorld($input: UpdateWorldInput!) {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -83,17 +61,6 @@ export const deleteWorld = `mutation DeleteWorld($input: DeleteWorldInput!) {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -122,11 +89,6 @@ export const createGame = `mutation CreateGame($input: CreateGameInput!) {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }
@@ -155,11 +117,6 @@ export const updateGame = `mutation UpdateGame($input: UpdateGameInput!) {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }
@@ -188,11 +145,6 @@ export const deleteGame = `mutation DeleteGame($input: DeleteGameInput!) {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }

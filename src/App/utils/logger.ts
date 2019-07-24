@@ -1,13 +1,13 @@
 import createDebug from 'debug';
 
-import { Loggers } from '../types/Logger';
+import { Logger, Loggers } from '../types/Logger';
 
 createDebug.disable();
 if (process.env.REACT_APP_DEBUG) {
     createDebug.enable(process.env.REACT_APP_DEBUG);
 }
 
-const LOGGER_KEY_BASE = 'role';
+const LOGGER_KEY_BASE = 'librarian';
 const LOGGER_KEY_SEPARATOR = ':';
 const LOGGER_LEVEL_WARN = 'warn';
 const LOGGER_LEVEL_ERROR = 'error';
@@ -24,7 +24,7 @@ function generateKey(keys: string | string[], level?: string) {
     return key.join(LOGGER_KEY_SEPARATOR);
 }
 
-export default function createLogger(keys: string | string[]) {
+export default function createLogger(keys: string | string[]): Logger {
     const key = generateKey(keys);
 
     if (!loggers[key]) {

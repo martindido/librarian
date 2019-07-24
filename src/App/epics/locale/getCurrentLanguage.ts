@@ -1,5 +1,5 @@
 import { Auth } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { getCurrentLanguageError, getCurrentLanguageSuccess } from '../../actions/locale';
@@ -28,5 +28,8 @@ export default (action$: ActionsObservable<GetCurrentLanguageAction>) =>
 async function getCurrentLanguage() {
     const user = await Auth.currentUserInfo();
 
-    return user.attributes.locale;
+    if (user && user.attributes.locale) {
+        return user.attributes.locale;
+    }
+    return 'en';
 }

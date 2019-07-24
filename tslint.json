@@ -20,6 +20,12 @@
             }
         ],
         "interface-name": [false],
-        "member-access": false
+        "member-access": false,
+        "member-ordering": [
+            true,
+            {
+                "order": ["constructor", "static-field", "instance-field", "static-method", "instance-method"]
+            }
+        ]
     }
 }

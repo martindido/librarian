@@ -2,44 +2,44 @@
 # yarn lockfile v1
 
 
-"@aws-amplify/analytics@^1.2.18":
-  version "1.2.18"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/analytics/-/analytics-1.2.18.tgz#0f62b5c76e72fff5214589ccf7741401e38bee37"
-  integrity sha1-D2K1x25y//UhRYnM93QUAeOL7jc=
+"@aws-amplify/analytics@^1.2.20":
+  version "1.2.20"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/analytics/-/analytics-1.2.20.tgz#1e95a11a83ee294802ac9041bf215c34eaab8353"
+  integrity sha1-HpWhGoPuKUgCrJBBvyFcNOqrg1M=
   dependencies:
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
     uuid "^3.2.1"
 
-"@aws-amplify/api@^1.0.37":
-  version "1.0.37"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/api/-/api-1.0.37.tgz#c95f927c17debdabb52e4bd364bce24ad5b06b76"
-  integrity sha1-yV+SfBfevau1LkvTZLziStWwa3Y=
+"@aws-amplify/api@^1.0.39":
+  version "1.0.39"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/api/-/api-1.0.39.tgz#38f6d955451129dc50656ffd8eec8128b951d23c"
+  integrity sha1-OPbZVUURKdxQZW/9juyBKLlR0jw=
   dependencies:
-    "@aws-amplify/auth" "^1.2.26"
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/auth" "^1.2.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
     axios "^0.19.0"
     graphql "0.13.0"
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
-"@aws-amplify/auth@^1.2.26":
-  version "1.2.26"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/auth/-/auth-1.2.26.tgz#3aa0f110d4ee25444fed8d55be586fef213caba3"
-  integrity sha1-OqDxENTuJURP7Y1Vvlhv7yE8q6M=
+"@aws-amplify/auth@^1.2.28":
+  version "1.2.28"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/auth/-/auth-1.2.28.tgz#93158a43a61a3e7b7b98bbbc7d86ad2f17ae9ce5"
+  integrity sha1-kxWKQ6YaPnt7mLu8fYatLxeunOU=
   dependencies:
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
-    amazon-cognito-identity-js "^3.0.13"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
+    amazon-cognito-identity-js "^3.0.14"
     crypto-js "^3.1.9-1"
 
-"@aws-amplify/cache@^1.0.28":
-  version "1.0.28"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/cache/-/cache-1.0.28.tgz#92005ab2360ddee7d44082c8b97d5723983c2ffa"
-  integrity sha1-kgBasjYN3ufUQILIuX1XI5g8L/o=
+"@aws-amplify/cache@^1.0.29":
+  version "1.0.29"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/cache/-/cache-1.0.29.tgz#3a2a09287d49db5c45679b858433afb69721ff79"
+  integrity sha1-OioJKH1J21xFZ5uFhDOvtpch/3k=
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
 
 "@aws-amplify/core@^1.0.28":
   version "1.0.28"
@@ -49,19 +49,27 @@
     aws-sdk "2.474.0"
     url "^0.11.0"
 
-"@aws-amplify/interactions@^1.0.31":
-  version "1.0.31"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/interactions/-/interactions-1.0.31.tgz#662adfca553e689935638405042f0471625d2204"
-  integrity sha1-ZirfylU+aJk1Y4QFBC8EcWJdIgQ=
-  dependencies:
-    "@aws-amplify/core" "^1.0.28"
-
-"@aws-amplify/pubsub@^1.0.29":
+"@aws-amplify/core@^1.0.29":
   version "1.0.29"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/pubsub/-/pubsub-1.0.29.tgz#c599054cbd25343a779c337e7576ef1bb9d53e27"
-  integrity sha1-xZkFTL0lNDp3nDN+dXbvG7nVPic=
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/core/-/core-1.0.29.tgz#2fd5f2a272a94e1bcb9df47fde4e01a3d4e1e34f"
+  integrity sha1-L9XyonKpThvLnfR/3k4Bo9Th408=
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    aws-sdk "2.474.0"
+    url "^0.11.0"
+
+"@aws-amplify/interactions@^1.0.32":
+  version "1.0.32"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/interactions/-/interactions-1.0.32.tgz#126d2850eef3293fc3cd1d638788498e0f761476"
+  integrity sha1-Em0oUO7zKT/DzR1jh4hJjg92FHY=
+  dependencies:
+    "@aws-amplify/core" "^1.0.29"
+
+"@aws-amplify/pubsub@^1.0.30":
+  version "1.0.30"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/pubsub/-/pubsub-1.0.30.tgz#d81e4b5bbb47bb0900dda90a3b3c4f5300f09981"
+  integrity sha1-2B5LW7tHuwkA3akKOzxPUwDwmYE=
+  dependencies:
+    "@aws-amplify/core" "^1.0.29"
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
@@ -72,17 +80,17 @@
   dependencies:
     "@aws-amplify/core" "^1.0.28"
 
-"@aws-amplify/ui@^1.0.20":
-  version "1.0.20"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/ui/-/ui-1.0.20.tgz#c10b9a2ef82026db7c03e928136682f5936858d7"
-  integrity sha1-wQuaLvggJtt8A+koE2aC9ZNoWNc=
+"@aws-amplify/ui@^1.0.22":
+  version "1.0.22"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/ui/-/ui-1.0.22.tgz#507ad11865211c313f15a7d6cbbbcaf4aaa32092"
+  integrity sha1-UHrRGGUhHDE/FafWy7vK9KqjIJI=
 
-"@aws-amplify/xr@^0.1.18":
-  version "0.1.18"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/xr/-/xr-0.1.18.tgz#508158a5afc8fbf6595cea240902929382556cff"
-  integrity sha1-UIFYpa/I+/ZZXOokCQKSk4JVbP8=
+"@aws-amplify/xr@^0.1.19":
+  version "0.1.19"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@aws-amplify/xr/-/xr-0.1.19.tgz#5dd5afcc49890e6259935f11325b38e53f0fd429"
+  integrity sha1-XdWvzEmJDmJZk18RMls45T8P1Ck=
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
 
 "@babel/code-frame@7.0.0":
   version "7.0.0"
@@ -181,7 +189,7 @@
     "@babel/traverse" "^7.4.4"
     "@babel/types" "^7.4.4"
 
-"@babel/helper-create-class-features-plugin@^7.4.0", "@babel/helper-create-class-features-plugin@^7.5.5":
+"@babel/helper-create-class-features-plugin@^7.4.0", "@babel/helper-create-class-features-plugin@^7.4.4", "@babel/helper-create-class-features-plugin@^7.5.5":
   version "7.5.5"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.5.5.tgz#401f302c8ddbc0edd36f7c6b2887d8fa1122e5a4"
   integrity sha1-QB8wLI3bwO3Tb3xrKIfY+hEi5aQ=
@@ -378,6 +386,15 @@
   integrity sha1-jhv9g++lSl9mIDOvzCuOcB9Ls6k=
   dependencies:
     "@babel/helper-create-class-features-plugin" "^7.4.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-decorators" "^7.2.0"
+
+"@babel/plugin-proposal-decorators@7.4.4":
+  version "7.4.4"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@babel/plugin-proposal-decorators/-/plugin-proposal-decorators-7.4.4.tgz#de9b2a1a8ab0196f378e2a82f10b6e2a36f21cc0"
+  integrity sha1-3psqGoqwGW83jiqC8QtuKjbyHMA=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.4.4"
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-decorators" "^7.2.0"
 
@@ -1245,6 +1262,23 @@
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha1-K1o6s/kYzKSKjHVMCBaOPwPrphs=
 
+"@overnightjs/core@1.6.9":
+  version "1.6.9"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@overnightjs/core/-/core-1.6.9.tgz#87d8a7fb4daf75159c62bac290f2af15b9ad9067"
+  integrity sha1-h9in+02vdRWcYrrCkPKvFbmtkGc=
+  dependencies:
+    express "^4.16.3"
+    reflect-metadata "^0.1.13"
+    tslib "^1.9.3"
+
+"@overnightjs/logger@1.1.9":
+  version "1.1.9"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@overnightjs/logger/-/logger-1.1.9.tgz#8a7d615f269d94f8d9dccfcf258e349dfeaa111d"
+  integrity sha1-in1hXyadlPjZ3M/PJY40nf6qER0=
+  dependencies:
+    colors "^1.3.3"
+    util "^0.11.1"
+
 "@semantic-ui-react/event-stack@^3.1.0":
   version "3.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@semantic-ui-react/event-stack/-/event-stack-3.1.0.tgz#aadbe4a28b0dd7703c5f451640d0fefe66dd9208"
@@ -1394,10 +1428,57 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/body-parser@*", "@types/body-parser@1.17.0":
+  version "1.17.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/body-parser/-/body-parser-1.17.0.tgz#9f5c9d9bd04bb54be32d5eb9fc0d8c974e6cf58c"
+  integrity sha1-n1ydm9BLtUvjLV65/A2Ml05s9Yw=
+  dependencies:
+    "@types/connect" "*"
+    "@types/node" "*"
+
+"@types/connect@*":
+  version "3.4.32"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
+  integrity sha1-qg6WFrlDXMrQK8UrW0VP/Cxwuig=
+  dependencies:
+    "@types/node" "*"
+
+"@types/cookie-parser@1.4.1":
+  version "1.4.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/cookie-parser/-/cookie-parser-1.4.1.tgz#e88a39c41960f31549b4c52dd8620aa4a2feb4bb"
+  integrity sha1-6Io5xBlg8xVJtMUt2GIKpKL+tLs=
+  dependencies:
+    "@types/express" "*"
+
 "@types/debug@4.1.4":
   version "4.1.4"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/debug/-/debug-4.1.4.tgz#56eec47706f0fd0b7c694eae2f3172e6b0b769da"
   integrity sha1-Vu7Edwbw/Qt8aU6uLzFy5rC3ado=
+
+"@types/express-serve-static-core@*":
+  version "4.16.7"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/express-serve-static-core/-/express-serve-static-core-4.16.7.tgz#50ba6f8a691c08a3dd9fa7fba25ef3133d298049"
+  integrity sha1-ULpvimkcCKPdn6f7ol7zEz0pgEk=
+  dependencies:
+    "@types/node" "*"
+    "@types/range-parser" "*"
+
+"@types/express-session@1.15.13":
+  version "1.15.13"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/express-session/-/express-session-1.15.13.tgz#47ae56b28b187bc2f38dc9b7050c3d1086f2c717"
+  integrity sha1-R65WsosYe8Lzjcm3BQw9EIbyxxc=
+  dependencies:
+    "@types/express" "*"
+    "@types/node" "*"
+
+"@types/express@*", "@types/express@4.17.0":
+  version "4.17.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/express/-/express-4.17.0.tgz#49eaedb209582a86f12ed9b725160f12d04ef287"
+  integrity sha1-SertsglYKobxLtm3JRYPEtBO8oc=
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
 
 "@types/history@*", "@types/history@4.7.2":
   version "4.7.2"
@@ -1449,10 +1530,37 @@
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/mime-types/-/mime-types-2.1.0.tgz#9ca52cda363f699c69466c2a6ccdaad913ea7a73"
   integrity sha1-nKUs2jY/aZxpRmwqbM2q2RPqenM=
 
+"@types/mime@*":
+  version "2.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
+  integrity sha1-3EiIQjEqfwdRSTEpBbXjwLBUx50=
+
 "@types/node@*", "@types/node@12.6.8":
   version "12.6.8"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/node/-/node-12.6.8.tgz#e469b4bf9d1c9832aee4907ba8a051494357c12c"
   integrity sha1-5Gm0v50cmDKu5JB7qKBRSUNXwSw=
+
+"@types/oauth@0.9.1":
+  version "0.9.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/oauth/-/oauth-0.9.1.tgz#e17221e7f7936b0459ae7d006255dff61adca305"
+  integrity sha1-4XIh5/eTawRZrn0AYlXf9hrcowU=
+  dependencies:
+    "@types/node" "*"
+
+"@types/passport-strategy@0.2.35":
+  version "0.2.35"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/passport-strategy/-/passport-strategy-0.2.35.tgz#e52f5212279ea73f02d9b06af67efe9cefce2d0c"
+  integrity sha1-5S9SEieepz8C2bBq9n7+nO/OLQw=
+  dependencies:
+    "@types/express" "*"
+    "@types/passport" "*"
+
+"@types/passport@*", "@types/passport@1.0.0":
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/passport/-/passport-1.0.0.tgz#747fa127a747a145ff279f3df3e07c425e5ff297"
+  integrity sha1-dH+hJ6dHoUX/J5898+B8Ql5f8pc=
+  dependencies:
+    "@types/express" "*"
 
 "@types/prop-types@*":
   version "15.7.1"
@@ -1463,6 +1571,11 @@
   version "1.5.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha1-aQoUdbhPKohP0HzXl8APXzE1bqg=
+
+"@types/range-parser@*":
+  version "1.2.3"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
+  integrity sha1-fuMwunyq+5gJC+zoal7kQRWQTCw=
 
 "@types/react-dom@16.8.4":
   version "16.8.4"
@@ -1536,6 +1649,14 @@
     "@types/react" "*"
     redux "^3.6.0 || ^4.0.0"
 
+"@types/serve-static@*":
+  version "1.13.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/serve-static/-/serve-static-1.13.2.tgz#f5ac4d7a6420a99a6a45af4719f4dcd8cd907a48"
+  integrity sha1-9axNemQgqZpqRa9HGfTc2M2Qekg=
+  dependencies:
+    "@types/express-serve-static-core" "*"
+    "@types/mime" "*"
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -1552,6 +1673,13 @@
   integrity sha1-lr6uI99vVhhiqDC0KIpJ6GuqwII=
   dependencies:
     source-map "^0.6.1"
+
+"@types/uuid@3.4.5":
+  version "3.4.5"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/uuid/-/uuid-3.4.5.tgz#d4dc10785b497a1474eae0ba7f0cb09c0ddfd6eb"
+  integrity sha1-1NwQeFtJehR06uC6fwywnA3f1us=
+  dependencies:
+    "@types/node" "*"
 
 "@types/webpack@*":
   version "4.4.35"
@@ -1838,14 +1966,21 @@ alphanum-sort@^1.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-amazon-cognito-identity-js@^3.0.13:
-  version "3.0.13"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/amazon-cognito-identity-js/-/amazon-cognito-identity-js-3.0.13.tgz#26d600d8dc08b840b4cf7ffce168ad38ae3999ec"
-  integrity sha1-JtYA2NwIuEC0z3/84WitOK45mew=
+amazon-cognito-identity-js@^3.0.14:
+  version "3.0.14"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/amazon-cognito-identity-js/-/amazon-cognito-identity-js-3.0.14.tgz#5bf83ae09c908d801306723b549776eccbb64bc9"
+  integrity sha1-W/g64JyQjYATBnI7VJd27Mu2S8k=
   dependencies:
     buffer "4.9.1"
     crypto-js "^3.1.9-1"
     js-cookie "^2.1.4"
+
+ansi-align@^2.0.0:
+  version "2.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
+  integrity sha1-w2rsy6VjuJzrVW82kPCx2eNUf38=
+  dependencies:
+    string-width "^2.0.0"
 
 ansi-colors@^3.0.0:
   version "3.2.4"
@@ -2087,29 +2222,44 @@ autoprefixer@^9.4.9:
     postcss "^7.0.17"
     postcss-value-parser "^4.0.0"
 
-aws-amplify-react@2.3.10:
-  version "2.3.10"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws-amplify-react/-/aws-amplify-react-2.3.10.tgz#cfc81f6ed584d65a9e5b03f001358c274f71a70d"
-  integrity sha1-z8gfbtWE1lqeWwPwATWMJ09xpw0=
+aws-amplify-react@2.3.11:
+  version "2.3.11"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws-amplify-react/-/aws-amplify-react-2.3.11.tgz#c41698ea803c35f35aaf6e7152a1be2d7cbf3ec6"
+  integrity sha1-xBaY6oA8NfNar25xUqG+LXy/PsY=
   dependencies:
     qrcode.react "^0.8.0"
     regenerator-runtime "^0.11.1"
 
-aws-amplify@1.1.30:
-  version "1.1.30"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws-amplify/-/aws-amplify-1.1.30.tgz#abcb82c9b1e4db10b4d1965b3acd7ec52260241b"
-  integrity sha1-q8uCybHk2xC00ZZbOs1+xSJgJBs=
+aws-amplify@1.1.32:
+  version "1.1.32"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws-amplify/-/aws-amplify-1.1.32.tgz#8e02211d156b4169c4260aa48e775e3192e43fb3"
+  integrity sha1-jgIhHRVrQWnEJgqkjndeMZLkP7M=
   dependencies:
-    "@aws-amplify/analytics" "^1.2.18"
-    "@aws-amplify/api" "^1.0.37"
-    "@aws-amplify/auth" "^1.2.26"
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
-    "@aws-amplify/interactions" "^1.0.31"
-    "@aws-amplify/pubsub" "^1.0.29"
+    "@aws-amplify/analytics" "^1.2.20"
+    "@aws-amplify/api" "^1.0.39"
+    "@aws-amplify/auth" "^1.2.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
+    "@aws-amplify/interactions" "^1.0.32"
+    "@aws-amplify/pubsub" "^1.0.30"
     "@aws-amplify/storage" "^1.0.31"
-    "@aws-amplify/ui" "^1.0.20"
-    "@aws-amplify/xr" "^0.1.18"
+    "@aws-amplify/ui" "^1.0.22"
+    "@aws-amplify/xr" "^0.1.19"
+
+aws-sdk@*:
+  version "2.498.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws-sdk/-/aws-sdk-2.498.0.tgz#42e05965166a01b45e026e4922926df4cd160fc5"
+  integrity sha1-QuBZZRZqAbReAm5JIpJt9M0WD8U=
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
 
 aws-sdk@2.474.0:
   version "2.474.0"
@@ -2136,7 +2286,7 @@ aws4@^1.8.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha1-8OAD2cqef1nHpQiUXXsu+aBKVC8=
 
-axios@^0.19.0:
+axios@0.19.0, axios@^0.19.0:
   version "0.19.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
   integrity sha1-jgm/89kSLhM/e4EByPvdAO09Krg=
@@ -2404,6 +2554,19 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
+boxen@^1.2.1:
+  version "1.3.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/boxen/-/boxen-1.3.0.tgz#55c6c39a8ba58d9c61ad22cd877532deb665a20b"
+  integrity sha1-VcbDmouljZxhrSLNh3Uy3rZlogs=
+  dependencies:
+    ansi-align "^2.0.0"
+    camelcase "^4.0.0"
+    chalk "^2.0.1"
+    cli-boxes "^1.0.0"
+    string-width "^2.0.0"
+    term-size "^1.2.0"
+    widest-line "^2.0.0"
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -2658,7 +2821,7 @@ camel-case@3.0.x:
     no-case "^2.2.0"
     upper-case "^1.1.1"
 
-camelcase@^4.1.0:
+camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
@@ -2695,6 +2858,11 @@ capture-exit@^2.0.0:
   dependencies:
     rsvp "^4.8.4"
 
+capture-stack-trace@^1.0.0:
+  version "1.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/capture-stack-trace/-/capture-stack-trace-1.0.1.tgz#a6c0bbe1f38f3aa0b92238ecb6ff42c344d4135d"
+  integrity sha1-psC74fOPOqC5Ijjstv9Cw0TUE10=
+
 case-sensitive-paths-webpack-plugin@2.2.0:
   version "2.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.2.0.tgz#3371ef6365ef9c25fa4b81c16ace0e9c7dc58c3e"
@@ -2730,7 +2898,7 @@ chardet@^0.7.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/chardet/-/chardet-0.7.0.tgz#90094849f0937f2eedc2425d0d28a9e5f0cbad9e"
   integrity sha1-kAlISfCTfy7twkJdDSip5fDLrZ4=
 
-chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.4:
+chokidar@^2.0.0, chokidar@^2.0.2, chokidar@^2.0.4, chokidar@^2.1.5:
   version "2.1.6"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/chokidar/-/chokidar-2.1.6.tgz#b6cad653a929e244ce8a834244164d241fa954c5"
   integrity sha1-tsrWU6kp4kTOioNCRBZNJB+pVMU=
@@ -2760,6 +2928,11 @@ chrome-trace-event@^1.0.0:
   integrity sha1-I0CQ7pfH1K0aLEvq4nUF3v/GCKQ=
   dependencies:
     tslib "^1.9.0"
+
+ci-info@^1.5.0:
+  version "1.6.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
+  integrity sha1-LKINu5zrMtRSSmgzAzE/AwSx5Jc=
 
 ci-info@^2.0.0:
   version "2.0.0"
@@ -2795,6 +2968,11 @@ clean-css@4.2.x:
   integrity sha1-LUEe92uFabbQyEBo2r6FsKpeXBc=
   dependencies:
     source-map "~0.6.0"
+
+cli-boxes@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
+  integrity sha1-T6kXw+WclKAEzWH47lCdplFocUM=
 
 cli-cursor@^2.1.0:
   version "2.1.0"
@@ -2907,6 +3085,11 @@ color@^3.0.0:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
+colors@^1.3.3:
+  version "1.3.3"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/colors/-/colors-1.3.3.tgz#39e005d546afe01e01f9c4ca8fa50f686a01205d"
+  integrity sha1-OeAF1Uav4B4B+cTKj6UPaGoBIF0=
+
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
@@ -2979,15 +3162,46 @@ concat-stream@^1.5.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
+configstore@^3.0.0:
+  version "3.1.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/configstore/-/configstore-3.1.2.tgz#c6f25defaeef26df12dd33414b001fe81a543f8f"
+  integrity sha1-xvJd767vJt8S3TNBSwAf6BpUP48=
+  dependencies:
+    dot-prop "^4.1.0"
+    graceful-fs "^4.1.2"
+    make-dir "^1.0.0"
+    unique-string "^1.0.0"
+    write-file-atomic "^2.0.0"
+    xdg-basedir "^3.0.0"
+
 confusing-browser-globals@^1.0.7:
   version "1.0.7"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/confusing-browser-globals/-/confusing-browser-globals-1.0.7.tgz#5ae852bd541a910e7ffb2dbb864a2d21a36ad29b"
   integrity sha1-WuhSvVQakQ5/+y27hkotIaNq0ps=
 
+connect-dynamodb@2.0.3:
+  version "2.0.3"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/connect-dynamodb/-/connect-dynamodb-2.0.3.tgz#85fca9f61e7bad030bf9d50e65071918bb641705"
+  integrity sha1-hfyp9h57rQML+dUOZQcZGLtkFwU=
+  dependencies:
+    connect "*"
+  optionalDependencies:
+    aws-sdk "*"
+
 connect-history-api-fallback@^1.3.0:
   version "1.6.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha1-izIIk1kwjRERFdgcrT/Oq4iPl7w=
+
+connect@*:
+  version "3.7.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/connect/-/connect-3.7.0.tgz#5d49348910caa5e07a01800b030d0c35f20484f8"
+  integrity sha1-XUk0iRDKpeB6AYALAw0MNfIEhPg=
+  dependencies:
+    debug "2.6.9"
+    finalhandler "1.1.2"
+    parseurl "~1.3.3"
+    utils-merge "1.0.1"
 
 connected-react-router@6.5.2:
   version "6.5.2"
@@ -3136,6 +3350,13 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
+create-error-class@^3.0.0:
+  version "3.0.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/create-error-class/-/create-error-class-3.0.2.tgz#06be7abef947a3f14a30fd610671d401bca8b7b6"
+  integrity sha1-Br56vvlHo/FKMP1hBnHUAbyot7Y=
+  dependencies:
+    capture-stack-trace "^1.0.0"
+
 create-hash@^1.1.0, create-hash@^1.1.2:
   version "1.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/create-hash/-/create-hash-1.2.0.tgz#889078af11a63756bcfb59bd221996be3a9ef196"
@@ -3195,6 +3416,15 @@ cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+cross-spawn@^5.0.1:
+  version "5.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
+  integrity sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=
+  dependencies:
+    lru-cache "^4.0.1"
+    shebang-command "^1.2.0"
+    which "^1.2.9"
+
 crypto-browserify@^3.11.0:
   version "3.12.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/crypto-browserify/-/crypto-browserify-3.12.0.tgz#396cf9f3137f03e4b8e532c58f698254e00f80ec"
@@ -3216,6 +3446,11 @@ crypto-js@^3.1.9-1:
   version "3.1.9-1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
   integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
+
+crypto-random-string@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
+  integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
 css-blank-pseudo@^0.1.4:
   version "0.1.4"
@@ -3493,7 +3728,7 @@ debug@=3.1.0:
   dependencies:
     ms "2.0.0"
 
-debug@^3.2.5, debug@^3.2.6:
+debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha1-6D0X3hbYp++3cX7b5fsQE17uYps=
@@ -3595,6 +3830,11 @@ depd@~1.1.2:
   version "1.1.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+
+depd@~2.0.0:
+  version "2.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
+  integrity sha1-tpYWPMdXVg0JzyLMj60Vcbeedt8=
 
 des.js@^1.0.0:
   version "1.0.0"
@@ -3756,7 +3996,7 @@ domutils@^1.5.1, domutils@^1.7.0:
     dom-serializer "0"
     domelementtype "1"
 
-dot-prop@^4.1.1:
+dot-prop@^4.1.0, dot-prop@^4.1.1:
   version "4.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   integrity sha1-HxngwuGqDjJ5fEl5nyg3rGr2nFc=
@@ -3772,6 +4012,11 @@ dotenv@6.2.0:
   version "6.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
   integrity sha1-lBwEEFNdlCyL7PKNPzV9vZ1HYGQ=
+
+duplexer3@^0.1.4:
+  version "0.1.4"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
+  integrity sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=
 
 duplexer@^0.1.1:
   version "0.1.1"
@@ -4171,6 +4416,19 @@ exec-sh@^0.3.2:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/exec-sh/-/exec-sh-0.3.2.tgz#6738de2eb7c8e671d0366aea0b0db8c6f7d7391b"
   integrity sha1-ZzjeLrfI5nHQNmrqCw24xvfXORs=
 
+execa@^0.7.0:
+  version "0.7.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
+  integrity sha1-lEvs00zEHuMqY6n68nrVpl/Fl3c=
+  dependencies:
+    cross-spawn "^5.0.1"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
 execa@^1.0.0:
   version "1.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
@@ -4219,7 +4477,21 @@ expect@^24.1.0, expect@^24.8.0:
     jest-message-util "^24.8.0"
     jest-regex-util "^24.3.0"
 
-express@4.17.1, express@^4.16.2:
+express-session@1.16.2:
+  version "1.16.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/express-session/-/express-session-1.16.2.tgz#59f36d7770e94872d19b163b6708a2d16aa6848c"
+  integrity sha1-WfNtd3DpSHLRmxY7Zwii0WqmhIw=
+  dependencies:
+    cookie "0.3.1"
+    cookie-signature "1.0.6"
+    debug "2.6.9"
+    depd "~2.0.0"
+    on-headers "~1.0.2"
+    parseurl "~1.3.3"
+    safe-buffer "5.1.2"
+    uid-safe "~2.1.5"
+
+express@4.17.1, express@^4.16.2, express@^4.16.3:
   version "4.17.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/express/-/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
   integrity sha1-RJH8OGBc9R+GKdOcK10Cb5ikwTQ=
@@ -4411,7 +4683,7 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-finalhandler@~1.1.2:
+finalhandler@1.1.2, finalhandler@~1.1.2:
   version "1.1.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/finalhandler/-/finalhandler-1.1.2.tgz#b7e7d000ffd11938d0fdb053506f6ebabe9f587d"
   integrity sha1-t+fQAP/RGTjQ/bBTUG9uur6fWH0=
@@ -4681,6 +4953,11 @@ get-own-enumerable-property-symbols@^3.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-3.0.0.tgz#b877b49a5c16aefac3655f2ed2ea5b684df8d203"
   integrity sha1-uHe0mlwWrvrDZV8u0upbaE340gM=
 
+get-stream@^3.0.0:
+  version "3.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
+  integrity sha1-jpQ9E1jcN1VQVOy+LtsFqhdO3hQ=
+
 get-stream@^4.0.0:
   version "4.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/get-stream/-/get-stream-4.1.0.tgz#c1b255575f3dc21d59bfc79cd3d2b46b1c3a54b5"
@@ -4724,6 +5001,13 @@ glob@^7.0.3, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
     minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
+
+global-dirs@^0.1.0:
+  version "0.1.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/global-dirs/-/global-dirs-0.1.1.tgz#b319c0dd4607f353f3be9cca4c72fc148c49f445"
+  integrity sha1-sxnA3UYH81PzvpzKTHL8FIxJ9EU=
+  dependencies:
+    ini "^1.3.4"
 
 global-modules@2.0.0:
   version "2.0.0"
@@ -4769,6 +5053,23 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+got@^6.7.1:
+  version "6.7.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/got/-/got-6.7.1.tgz#240cd05785a9a18e561dc1b44b41c763ef1e8db0"
+  integrity sha1-JAzQV4WpoY5WHcG0S0HHY+8ejbA=
+  dependencies:
+    create-error-class "^3.0.0"
+    duplexer3 "^0.1.4"
+    get-stream "^3.0.0"
+    is-redirect "^1.0.0"
+    is-retry-allowed "^1.0.0"
+    is-stream "^1.0.0"
+    lowercase-keys "^1.0.0"
+    safe-buffer "^5.0.1"
+    timed-out "^4.0.0"
+    unzip-response "^2.0.1"
+    url-parse-lax "^1.0.0"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.2.0"
@@ -5112,6 +5413,11 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
+http-status-codes@1.3.2:
+  version "1.3.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/http-status-codes/-/http-status-codes-1.3.2.tgz#181dfa4455ef454e5e4d827718fca3936680d10d"
+  integrity sha1-GB36RFXvRU5eTYJ3GPyjk2aA0Q0=
+
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
@@ -5157,6 +5463,11 @@ iferr@^0.1.5:
   version "0.1.5"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/iferr/-/iferr-0.1.5.tgz#c60eed69e6d8fdb6b3104a1fcbca1c192dc5b501"
   integrity sha1-xg7taebY/bazEEofy8ocGS3FtQE=
+
+ignore-by-default@^1.0.1:
+  version "1.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/ignore-by-default/-/ignore-by-default-1.0.1.tgz#48ca6d72f6c6a3af00a9ad4ae6876be3889e2b09"
+  integrity sha1-SMptcvbGo68Aqa1K5odr44ieKwk=
 
 ignore-styles@5.0.1:
   version "5.0.1"
@@ -5220,6 +5531,11 @@ import-from@^2.1.0:
   dependencies:
     resolve-from "^3.0.0"
 
+import-lazy@^2.1.0:
+  version "2.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/import-lazy/-/import-lazy-2.1.0.tgz#05698e3d45c88e8d7e9d92cb0584e77f096f3e43"
+  integrity sha1-BWmOPUXIjo1+nZLLBYTnfwlvPkM=
+
 import-local@^2.0.0:
   version "2.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/import-local/-/import-local-2.0.0.tgz#55070be38a5993cf18ef6db7e961f5bee5c5a09d"
@@ -5261,7 +5577,7 @@ inherits@2.0.3:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-ini@^1.3.5, ini@~1.3.0:
+ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
   version "1.3.5"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc=
@@ -5395,6 +5711,13 @@ is-callable@^1.1.4:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-callable/-/is-callable-1.1.4.tgz#1e1adf219e1eeb684d691f9d6a05ff0d30a24d75"
   integrity sha1-HhrfIZ4e62hNaR+dagX/DTCiTXU=
 
+is-ci@^1.0.10:
+  version "1.2.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-ci/-/is-ci-1.2.1.tgz#e3779c8ee17fccf428488f6e281187f2e632841c"
+  integrity sha1-43ecjuF/zPQoSI9uKBGH8uYyhBw=
+  dependencies:
+    ci-info "^1.5.0"
+
 is-ci@^2.0.0:
   version "2.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-ci/-/is-ci-2.0.0.tgz#6bc6334181810e04b5c22b3d589fdca55026404c"
@@ -5504,6 +5827,19 @@ is-glob@^4.0.0:
   dependencies:
     is-extglob "^2.1.1"
 
+is-installed-globally@^0.1.0:
+  version "0.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-installed-globally/-/is-installed-globally-0.1.0.tgz#0dfd98f5a9111716dd535dda6492f67bf3d25a80"
+  integrity sha1-Df2Y9akRFxbdU13aZJL2e/PSWoA=
+  dependencies:
+    global-dirs "^0.1.0"
+    is-path-inside "^1.0.0"
+
+is-npm@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-npm/-/is-npm-1.0.0.tgz#f2fb63a65e4905b406c86072765a1a4dc793b9f4"
+  integrity sha1-8vtjpl5JBbQGyGBydloaTceTufQ=
+
 is-number@^3.0.0:
   version "3.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-number/-/is-number-3.0.0.tgz#24fd6201a4782cf50561c810276afc7d12d71195"
@@ -5547,6 +5883,11 @@ is-promise@^2.1.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-promise/-/is-promise-2.1.0.tgz#79a2a9ece7f096e80f36d2b2f3bc16c1ff4bf3fa"
   integrity sha1-eaKp7OfwlugPNtKy87wWwf9L8/o=
 
+is-redirect@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-redirect/-/is-redirect-1.0.0.tgz#1d03dded53bd8db0f30c26e4f95d36fc7c87dc24"
+  integrity sha1-HQPd7VO9jbDzDCbk+V02/HyH3CQ=
+
 is-regex@^1.0.4:
   version "1.0.4"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-regex/-/is-regex-1.0.4.tgz#5517489b547091b0930e095654ced25ee97e9491"
@@ -5564,12 +5905,17 @@ is-resolvable@^1.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
   integrity sha1-+xj4fOH+uSUWnJpAfBkxijIG7Yg=
 
+is-retry-allowed@^1.0.0:
+  version "1.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
+  integrity sha1-EaBgVotnM5REAz0BJaYaINVk+zQ=
+
 is-root@2.0.0:
   version "2.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-root/-/is-root-2.0.0.tgz#838d1e82318144e5a6f77819d90207645acc7019"
   integrity sha1-g40egjGBROWm93gZ2QIHZFrMcBk=
 
-is-stream@^1.0.1, is-stream@^1.1.0:
+is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
@@ -6347,6 +6693,13 @@ last-call-webpack-plugin@^3.0.0:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
 
+latest-version@^3.0.0:
+  version "3.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
+  integrity sha1-ogU4P+oyKzO1rjsYq+4NwvNW7hU=
+  dependencies:
+    package-json "^4.0.0"
+
 lazy-cache@^0.2.3:
   version "0.2.7"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/lazy-cache/-/lazy-cache-0.2.7.tgz#7feddf2dcb6edb77d11ef1d117ab5ffdf0ab1b65"
@@ -6512,12 +6865,32 @@ lower-case@^1.1.1:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
   integrity sha1-miyr0bno4K6ZOkv31YdcOcQujqw=
 
+lowercase-keys@^1.0.0:
+  version "1.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
+  integrity sha1-b54wtHCE2XGnyCD/FabFFnt0wm8=
+
+lru-cache@^4.0.1:
+  version "4.1.5"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/lru-cache/-/lru-cache-4.1.5.tgz#8bbe50ea85bed59bc9e33dcab8235ee9bcf443cd"
+  integrity sha1-i75Q6oW+1ZvJ4z3KuCNe6bz0Q80=
+  dependencies:
+    pseudomap "^1.0.2"
+    yallist "^2.1.2"
+
 lru-cache@^5.1.1:
   version "5.1.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
   integrity sha1-HaJ+ZxAnGUdpXa9oSOhH8B2EuSA=
   dependencies:
     yallist "^3.0.2"
+
+make-dir@^1.0.0:
+  version "1.3.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
+  integrity sha1-ecEDO4BRW9bSTsmTPoYMp17ifww=
+  dependencies:
+    pify "^3.0.0"
 
 make-dir@^2.0.0, make-dir@^2.1.0:
   version "2.1.0"
@@ -7003,6 +7376,22 @@ node-releases@^1.1.13, node-releases@^1.1.25:
   dependencies:
     semver "^5.3.0"
 
+nodemon@1.19.1:
+  version "1.19.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/nodemon/-/nodemon-1.19.1.tgz#576f0aad0f863aabf8c48517f6192ff987cd5071"
+  integrity sha1-V28KrQ+GOqv4xIUX9hkv+YfNUHE=
+  dependencies:
+    chokidar "^2.1.5"
+    debug "^3.1.0"
+    ignore-by-default "^1.0.1"
+    minimatch "^3.0.4"
+    pstree.remy "^1.1.6"
+    semver "^5.5.0"
+    supports-color "^5.2.0"
+    touch "^3.1.0"
+    undefsafe "^2.0.2"
+    update-notifier "^2.5.0"
+
 nopt@^4.0.1:
   version "4.0.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/nopt/-/nopt-4.0.1.tgz#d0d4685afd5415193c8c7505602d0d17cd64474d"
@@ -7010,6 +7399,13 @@ nopt@^4.0.1:
   dependencies:
     abbrev "1"
     osenv "^0.1.4"
+
+nopt@~1.0.10:
+  version "1.0.10"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/nopt/-/nopt-1.0.10.tgz#6ddd21bd2a31417b92727dd585f8a6f37608ebee"
+  integrity sha1-bd0hvSoxQXuScn3Vhfim83YI6+4=
+  dependencies:
+    abbrev "1"
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
@@ -7099,6 +7495,11 @@ oauth-sign@~0.9.0:
   version "0.9.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha1-R6ewFrqmi1+g7PPe4IqFxnmsZFU=
+
+oauth@0.9.15, oauth@0.9.x:
+  version "0.9.15"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/oauth/-/oauth-0.9.15.tgz#bd1fefaf686c96b75475aed5196412ff60cfb9c1"
+  integrity sha1-vR/vr2hslrdUda7VGWQS/2DPucE=
 
 object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
@@ -7365,6 +7766,16 @@ p-try@^2.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=
 
+package-json@^4.0.0:
+  version "4.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/package-json/-/package-json-4.0.1.tgz#8869a0401253661c4c4ca3da6c2121ed555f5eed"
+  integrity sha1-iGmgQBJTZhxMTKPabCEh7VVfXu0=
+  dependencies:
+    got "^6.7.1"
+    registry-auth-token "^3.0.1"
+    registry-url "^3.0.3"
+    semver "^5.1.0"
+
 pako@~1.0.5:
   version "1.0.10"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
@@ -7440,6 +7851,36 @@ pascalcase@^0.1.1:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
 
+passport-goodreads@1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/passport-goodreads/-/passport-goodreads-1.0.0.tgz#4d604404d7b310a829e0daa120f3f831e6f6795a"
+  integrity sha1-TWBEBNezEKgp4NqhIPP4Meb2eVo=
+  dependencies:
+    passport-oauth1 "1.x.x"
+    xml2js "0.1.x"
+
+passport-oauth1@1.x.x:
+  version "1.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/passport-oauth1/-/passport-oauth1-1.1.0.tgz#a7de988a211f9cf4687377130ea74df32730c918"
+  integrity sha1-p96YiiEfnPRoc3cTDqdN8ycwyRg=
+  dependencies:
+    oauth "0.9.x"
+    passport-strategy "1.x.x"
+    utils-merge "1.x.x"
+
+passport-strategy@1.0.0, passport-strategy@1.x.x:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
+  integrity sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=
+
+passport@0.4.0:
+  version "0.4.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/passport/-/passport-0.4.0.tgz#c5095691347bd5ad3b5e180238c3914d16f05811"
+  integrity sha1-xQlWkTR71a07XhgCOMORTRbwWBE=
+  dependencies:
+    passport-strategy "1.x.x"
+    pause "0.0.1"
+
 path-browserify@0.0.1:
   version "0.0.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/path-browserify/-/path-browserify-0.0.1.tgz#e6c4ddd7ed3aa27c68a20cc4e50e1a4ee83bbc4a"
@@ -7507,6 +7948,11 @@ path-type@^3.0.0:
   integrity sha1-zvMdyOCho7sNEFwM2Xzzv0f0428=
   dependencies:
     pify "^3.0.0"
+
+pause@0.0.1:
+  version "0.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
+  integrity sha1-HUCLP9t2kjuVQ9lvtMnf1TXZy10=
 
 pbkdf2@^3.0.3:
   version "3.0.17"
@@ -8273,6 +8719,11 @@ prelude-ls@~1.1.2:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
+prepend-http@^1.0.1:
+  version "1.0.4"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
+  integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
+
 pretty-bytes@^5.1.0:
   version "5.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pretty-bytes/-/pretty-bytes-5.2.0.tgz#96c92c6e95a0b35059253fb33c03e260d40f5a1f"
@@ -8373,10 +8824,20 @@ prr@~1.0.1:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
   integrity sha1-0/wRS6BplaRexok/SEzrHXj19HY=
 
+pseudomap@^1.0.2:
+  version "1.0.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
+  integrity sha1-8FKijacOYYkX7wqKw0wa5aaChrM=
+
 psl@^1.1.24, psl@^1.1.28:
   version "1.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/psl/-/psl-1.2.0.tgz#df12b5b1b3a30f51c329eacbdef98f3a6e136dc6"
   integrity sha1-3xK1sbOjD1HDKerL3vmPOm4TbcY=
+
+pstree.remy@^1.1.6:
+  version "1.1.7"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/pstree.remy/-/pstree.remy-1.1.7.tgz#c76963a28047ed61542dc361aa26ee55a7fa15f3"
+  integrity sha1-x2ljooBH7WFULcNhqibuVaf6FfM=
 
 public-encrypt@^4.0.0:
   version "4.0.3"
@@ -8489,6 +8950,11 @@ raf@3.4.1:
   dependencies:
     performance-now "^2.1.0"
 
+random-bytes@~1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
+  integrity sha1-T2ih3Arli9P7lYSMMDJNt11kNgs=
+
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -8519,7 +8985,7 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-rc@^1.2.7:
+rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
   version "1.2.8"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   integrity sha1-zZJL9SAKB1uDwYjNa54hG3/A0+0=
@@ -8920,6 +9386,11 @@ redux@4.0.4, "redux@^3.6.0 || ^4.0.0", redux@^4.0.0:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
+reflect-metadata@^0.1.13:
+  version "0.1.13"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
+
 regenerate-unicode-properties@^8.0.2:
   version "8.1.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/regenerate-unicode-properties/-/regenerate-unicode-properties-8.1.0.tgz#ef51e0f0ea4ad424b77bf7cb41f3e015c70a3f0e"
@@ -8978,6 +9449,21 @@ regexpu-core@^4.5.4:
     regjsparser "^0.6.0"
     unicode-match-property-ecmascript "^1.0.4"
     unicode-match-property-value-ecmascript "^1.1.0"
+
+registry-auth-token@^3.0.1:
+  version "3.4.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/registry-auth-token/-/registry-auth-token-3.4.0.tgz#d7446815433f5d5ed6431cd5dca21048f66b397e"
+  integrity sha1-10RoFUM/XV7WQxzV3KIQSPZrOX4=
+  dependencies:
+    rc "^1.1.6"
+    safe-buffer "^5.0.1"
+
+registry-url@^3.0.3:
+  version "3.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/registry-url/-/registry-url-3.1.0.tgz#3d4ef870f73dde1d77f0cf9a381432444e174942"
+  integrity sha1-PU74cPc93h138M+aOBQyRE4XSUI=
+  dependencies:
+    rc "^1.0.1"
 
 regjsgen@^0.5.0:
   version "0.5.0"
@@ -9258,7 +9744,7 @@ sax@1.2.1:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/sax/-/sax-1.2.1.tgz#7b8e656190b228e81a66aea748480d828cd2d37a"
   integrity sha1-e45lYZCyKOgaZq6nSEgNgozS03o=
 
-sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
+sax@>=0.1.1, sax@>=0.6.0, sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha1-KBYjTiN4vdxOU1T6tcqold9xANk=
@@ -9330,7 +9816,14 @@ semantic-ui-react@^0.78.2:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
-"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
+semver-diff@^2.0.0:
+  version "2.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"
+  integrity sha1-S7uEN8jTfksM8aaP1ybsbWRdbTY=
+  dependencies:
+    semver "^5.0.3"
+
+"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/semver/-/semver-5.7.0.tgz#790a7cf6fea5459bac96110b29b60412dc8ff96b"
   integrity sha1-eQp89v6lRZuslhELKbYEEtyP+Ws=
@@ -9940,7 +10433,7 @@ supports-color@^3.2.3:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^5.3.0:
+supports-color@^5.2.0, supports-color@^5.3.0:
   version "5.5.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
   integrity sha1-4uaaRKyHcveKHsCzW2id9lMO/I8=
@@ -10022,6 +10515,13 @@ temp@^0.9.0:
   integrity sha1-YTkXlaEb2XONTE1/VfASy49V7ao=
   dependencies:
     rimraf "~2.6.2"
+
+term-size@^1.2.0:
+  version "1.2.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
+  integrity sha1-RYuDiH8oj8Vtb/+/rSYuJmOO+mk=
+  dependencies:
+    execa "^0.7.0"
 
 terser-webpack-plugin@1.2.3:
   version "1.2.3"
@@ -10109,6 +10609,11 @@ thunky@^1.0.2:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/thunky/-/thunky-1.0.3.tgz#f5df732453407b09191dae73e2a8cc73f381a826"
   integrity sha1-9d9zJFNAewkZHa5z4qjMc/OBqCY=
 
+timed-out@^4.0.0:
+  version "4.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
+  integrity sha1-8y6srFoXW+ol1/q1Zas+2HQe9W8=
+
 timers-browserify@^2.0.4:
   version "2.0.10"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/timers-browserify/-/timers-browserify-2.0.10.tgz#1d28e3d2aadf1d5a5996c4e9f95601cd053480ae"
@@ -10183,6 +10688,13 @@ toidentifier@1.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha1-fhvjRw8ed5SLxD2Uo8j013UrpVM=
 
+touch@^3.1.0:
+  version "3.1.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/touch/-/touch-3.1.0.tgz#fe365f5f75ec9ed4e56825e0bb76d24ab74af83b"
+  integrity sha1-/jZfX3XsntTlaCXgu3bSSrdK+Ds=
+  dependencies:
+    nopt "~1.0.10"
+
 tough-cookie@^2.3.3, tough-cookie@^2.3.4, tough-cookie@^2.5.0:
   version "2.5.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
@@ -10216,7 +10728,7 @@ ts-pnp@1.1.2, ts-pnp@^1.0.0:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/ts-pnp/-/ts-pnp-1.1.2.tgz#be8e4bfce5d00f0f58e0666a82260c34a57af552"
   integrity sha1-vo5L/OXQDw9Y4GZqgiYMNKV69VI=
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
@@ -10322,6 +10834,20 @@ uglify-js@^3.1.4:
     commander "~2.20.0"
     source-map "~0.6.1"
 
+uid-safe@~2.1.5:
+  version "2.1.5"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/uid-safe/-/uid-safe-2.1.5.tgz#2b3d5c7240e8fc2e58f8aa269e5ee49c0857bd3a"
+  integrity sha1-Kz1cckDo/C5Y+Komnl7knAhXvTo=
+  dependencies:
+    random-bytes "~1.0.0"
+
+undefsafe@^2.0.2:
+  version "2.0.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/undefsafe/-/undefsafe-2.0.2.tgz#225f6b9e0337663e0d8e7cfd686fc2836ccace76"
+  integrity sha1-Il9rngM3Zj4Njnz9aG/Cg2zKznY=
+  dependencies:
+    debug "^2.2.0"
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
@@ -10379,6 +10905,13 @@ unique-slug@^2.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
+unique-string@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/unique-string/-/unique-string-1.0.0.tgz#9e1057cca851abb93398f8b33ae187b99caec11a"
+  integrity sha1-nhBXzKhRq7kzmPizOuGHuZyuwRo=
+  dependencies:
+    crypto-random-string "^1.0.0"
+
 universalify@^0.1.0:
   version "0.1.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
@@ -10402,10 +10935,31 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
+unzip-response@^2.0.1:
+  version "2.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
+  integrity sha1-0vD3N9FrBhXnKmk17QQhRXLVb5c=
+
 upath@^1.1.1:
   version "1.1.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
   integrity sha1-PbZYYA7a7sy+bbXmhNZ+6MKs0Gg=
+
+update-notifier@^2.5.0:
+  version "2.5.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/update-notifier/-/update-notifier-2.5.0.tgz#d0744593e13f161e406acb1d9408b72cad08aff6"
+  integrity sha1-0HRFk+E/Fh5AassdlAi3LK0Ir/Y=
+  dependencies:
+    boxen "^1.2.1"
+    chalk "^2.0.1"
+    configstore "^3.0.0"
+    import-lazy "^2.1.0"
+    is-ci "^1.0.10"
+    is-installed-globally "^0.1.0"
+    is-npm "^1.0.0"
+    latest-version "^3.0.0"
+    semver-diff "^2.0.0"
+    xdg-basedir "^3.0.0"
 
 upper-case@^1.1.1:
   version "1.1.3"
@@ -10432,6 +10986,13 @@ url-loader@1.1.2:
     loader-utils "^1.1.0"
     mime "^2.0.3"
     schema-utils "^1.0.0"
+
+url-parse-lax@^1.0.0:
+  version "1.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73"
+  integrity sha1-evjzA2Rem9eaJy56FKxovAYJ2nM=
+  dependencies:
+    prepend-http "^1.0.1"
 
 url-parse@^1.4.3:
   version "1.4.7"
@@ -10482,7 +11043,7 @@ util@0.10.3:
   dependencies:
     inherits "2.0.1"
 
-util@^0.11.0:
+util@^0.11.0, util@^0.11.1:
   version "0.11.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/util/-/util-0.11.1.tgz#3236733720ec64bb27f6e26f421aaa2e1b588d61"
   integrity sha1-MjZzNyDsZLsn9uJvQhqqLhtYjWE=
@@ -10494,7 +11055,7 @@ utila@^0.4.0, utila@~0.4:
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
-utils-merge@1.0.1:
+utils-merge@1.0.1, utils-merge@1.x.x:
   version "1.0.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
@@ -10761,6 +11322,13 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2 || 2"
 
+widest-line@^2.0.0:
+  version "2.0.1"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/widest-line/-/widest-line-2.0.1.tgz#7438764730ec7ef4381ce4df82fb98a53142a3fc"
+  integrity sha1-dDh2RzDsfvQ4HOTfgvuYpTFCo/w=
+  dependencies:
+    string-width "^2.1.1"
+
 wordwrap@~0.0.2:
   version "0.0.3"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
@@ -10951,6 +11519,15 @@ write-file-atomic@2.4.1:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.2"
 
+write-file-atomic@^2.0.0:
+  version "2.4.3"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/write-file-atomic/-/write-file-atomic-2.4.3.tgz#1fd2e9ae1df3e75b8d8c367443c692d4ca81f481"
+  integrity sha1-H9Lprh3z51uNjDZ0Q8aS1MqB9IE=
+  dependencies:
+    graceful-fs "^4.1.11"
+    imurmurhash "^0.1.4"
+    signal-exit "^3.0.2"
+
 write@1.0.3:
   version "1.0.3"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/write/-/write-1.0.3.tgz#0800e14523b923a387e415123c865616aae0f5c3"
@@ -10972,10 +11549,29 @@ ws@^6.1.2:
   dependencies:
     async-limiter "~1.0.0"
 
+xdg-basedir@^3.0.0:
+  version "3.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
+  integrity sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ=
+
+xml-js@1.6.11:
+  version "1.6.11"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha1-kn0vaUf38cGaMW3Y7qNhTosY+Ok=
+  dependencies:
+    sax "^1.2.4"
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
   integrity sha1-auc+Bt5NjG5H+fsYH3jWSK1FfGo=
+
+xml2js@0.1.x:
+  version "0.1.14"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xml2js/-/xml2js-0.1.14.tgz#5274e67f5a64c5f92974cd85139e0332adc6b90c"
+  integrity sha1-UnTmf1pkxfkpdM2FE54DMq3GuQw=
+  dependencies:
+    sax ">=0.1.1"
 
 xml2js@0.4.19:
   version "0.4.19"
@@ -11009,6 +11605,11 @@ xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
   integrity sha1-le+U+F7MgdAHwmThkKEg8KPIVms=
+
+yallist@^2.1.2:
+  version "2.1.2"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
+  integrity sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
 
 yallist@^3.0.0, yallist@^3.0.2, yallist@^3.0.3:
   version "3.0.3"

@@ -1,4 +1,5 @@
 import { AuthAction } from './Auth';
+import { GoodreadsAction } from './Goodreads';
 import { GraphQLAction } from './GraphQL';
 import { LoadAction } from './Load';
 import { LocaleAction } from './Locale';
@@ -9,6 +10,7 @@ import { SyncAction } from './Sync';
 
 export type Action =
     | AuthAction
+    | GoodreadsAction
     | GraphQLAction
     | LoadAction
     | LocaleAction

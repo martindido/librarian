@@ -3,7 +3,7 @@ import { Confirmation, Credentials } from '../types/Auth';
 import { user, USERNAME } from './user';
 
 export const CODE = '123456';
-export const EMAIL = 'role@center.com';
+export const EMAIL = 'librarian@librarian.com';
 export const PASSWORD = 'abc123';
 export const RESULT = 'ok';
 

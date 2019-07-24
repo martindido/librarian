@@ -41,7 +41,7 @@ export default class SignUpConfirm extends Component<SignUpConfirmProps> {
             return <Redirect to={'/sign-up'} />;
         }
         return (
-            <Page id='SignUpConfirm' description='Role sign up confirmation' withHeader={false}>
+            <Page id='SignUpConfirm' description='Librarian sign up confirmation' withHeader={false}>
                 <Grid centered textAlign='center' verticalAlign='middle'>
                     <Grid.Column className='wrapper'>
                         <Header as='h2' color='black' textAlign='center' inverted>

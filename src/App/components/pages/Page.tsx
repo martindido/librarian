@@ -9,8 +9,8 @@ import '../../styles/Page.css';
 import { PageProps } from '../../types/Props/Pages/Page';
 import { createPropsGetter } from '../../utils/props';
 
-const SITE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://www.rolecenter.com';
-const defaultTitle = 'Role';
+const SITE_URL = `http://www.librarian.world${process.env.NODE_ENV === 'development' ? ':3000' : ''}`;
+const defaultTitle = 'Librarian';
 
 export default class Page extends Component<PageProps> {
     static defaultProps = {

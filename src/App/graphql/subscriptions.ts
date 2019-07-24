@@ -17,17 +17,6 @@ export const onCreateWorld = `subscription OnCreateWorld {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -50,17 +39,6 @@ export const onUpdateWorld = `subscription OnUpdateWorld {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -83,17 +61,6 @@ export const onDeleteWorld = `subscription OnDeleteWorld {
         id
         name
         slug
-        logo {
-          name
-          size
-          type
-          extension
-        }
-        world {
-          id
-          name
-          slug
-        }
       }
       nextToken
     }
@@ -122,11 +89,6 @@ export const onCreateGame = `subscription OnCreateGame {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }
@@ -155,11 +117,6 @@ export const onUpdateGame = `subscription OnUpdateGame {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }
@@ -188,11 +145,6 @@ export const onDeleteGame = `subscription OnDeleteGame {
         extension
       }
       games {
-        items {
-          id
-          name
-          slug
-        }
         nextToken
       }
     }

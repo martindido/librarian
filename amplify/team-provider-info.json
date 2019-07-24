@@ -1,14 +1,19 @@
 {
-    "NONE": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "role-20181027160927-authRole",
-            "UnauthRoleArn": "arn:aws:iam::996626415660:role/role-20181027160927-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::996626415660:role/role-20181027160927-authRole",
+            "AuthRoleName": "librarian-dev-20190719172536-authRole",
+            "UnauthRoleArn": "arn:aws:iam::996626415660:role/librarian-dev-20190719172536-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::996626415660:role/librarian-dev-20190719172536-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "role-20181027160927-deployment",
-            "UnauthRoleName": "role-20181027160927-unauthRole",
-            "StackName": "role-20181027160927",
-            "StackId": "arn:aws:cloudformation:us-east-1:996626415660:stack/role-20181027160927/d4863ee0-da1b-11e8-a8a9-50fae583d0fe"
+            "DeploymentBucketName": "librarian-dev-20190719172536-deployment",
+            "UnauthRoleName": "librarian-dev-20190719172536-unauthRole",
+            "StackName": "librarian-dev-20190719172536",
+            "StackId": "arn:aws:cloudformation:us-east-1:996626415660:stack/librarian-dev-20190719172536/5e614cf0-aa63-11e9-aeb8-0adb15c4df9c"
+        },
+        "categories": {
+            "auth": {
+                "users": {}
+            }
         }
     }
 }

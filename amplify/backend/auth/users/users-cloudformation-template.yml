@@ -12,128 +12,111 @@ Parameters:
   unauthRoleArn:
     Type: String
 
+  
+  
+  
+
     
   identityPoolName:
     Type: String
-              
+                
   allowUnauthenticatedIdentities:
-    Type: String
-            
-  thirdPartyAuth:
-    Type: String
-          
-  lambdaLogPolicy:
     Type: String
             
   openIdLambdaRoleName:
     Type: String
-            
-  openIdRolePolicy:
+              
+  resourceNameTruncated:
     Type: String
-            
-  openIdLambdaIAMPolicy:
-    Type: String
-            
-  openIdLogPolicy:
-    Type: String
-            
+              
   userPoolName:
     Type: String
-                  
+                      
   autoVerifiedAttributes:
     Type: CommaDelimitedList
       
   mfaConfiguration:
     Type: String
-                  
+                      
   mfaTypes:
     Type: CommaDelimitedList
       
-  roleName:
-    Type: String
-            
-  roleExternalId:
-    Type: String
-            
-  policyName:
-    Type: String
-            
   smsAuthenticationMessage:
     Type: String
-            
+              
   smsVerificationMessage:
     Type: String
-            
+              
   emailVerificationSubject:
     Type: String
-            
+              
   emailVerificationMessage:
     Type: String
-              
+                
   defaultPasswordPolicy:
     Type: String
-              
+                
   passwordPolicyMinLength:
     Type: Number
-              
+                  
   passwordPolicyCharacters:
     Type: CommaDelimitedList
-            
+              
   requiredAttributes:
     Type: CommaDelimitedList
       
   userpoolClientName:
     Type: String
-              
+                
   userpoolClientGenerateSecret:
     Type: String
-              
+                
   userpoolClientRefreshTokenValidity:
     Type: Number
+                  
+  userpoolClientWriteAttributes:
+    Type: CommaDelimitedList
               
   userpoolClientReadAttributes:
     Type: CommaDelimitedList
       
   mfaLambdaRole:
     Type: String
-            
-  mfaLambdaLogPolicy:
-    Type: String
-            
-  mfaPassRolePolicy:
-    Type: String
-            
-  mfaLambdaIAMPolicy:
-    Type: String
-            
+              
   userpoolClientLambdaRole:
     Type: String
-            
-  userpoolClientLogPolicy:
-    Type: String
-            
-  userpoolClientLambdaPolicy:
-    Type: String
-              
+                
   userpoolClientSetAttributes:
     Type: String
-          
+            
   useDefault:
     Type: String
-            
+              
   authSelections:
     Type: String
-            
+              
   resourceName:
     Type: String
-            
-  unAuthRoleName:
+                
+  thirdPartyAuth:
     Type: String
-            
-  unAuthRoleArn:
+                    
+  usernameAttributes:
+    Type: CommaDelimitedList
+      
+  triggers:
     Type: String
-                  
-  userpoolClientWriteAttributes:
+                
+  hostedUI:
+    Type: String
+                                                                  
+  parentStack:
+    Type: String
+                
+  permissions:
+    Type: CommaDelimitedList
+              
+  dependsOn:
     Type: CommaDelimitedList
     
 Conditions:
@@ -141,12 +124,13 @@ Conditions:
 
 Resources:
   
+  
   # BEGIN SNS ROLE RESOURCE
   SNSRole: 
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, !Ref roleName, !Join ['',[!Ref roleName, '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'users38dd29dd_sns-role', !Join ['',['users38dd29dd_sns-role', '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -158,10 +142,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: !Ref roleExternalId
+                sts:ExternalId: users38dd29dd_role_external_id
       Policies: 
         - 
-          PolicyName: !Ref policyName
+          PolicyName: users38dd29dd-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -178,18 +162,16 @@ Resources:
     UpdateReplacePolicy: Retain
     Properties:
       UserPoolName: !If [ShouldNotCreateEnvResources, !Ref userPoolName, !Join ['',[!Ref userPoolName, '-', !Ref env]]]
+      
       Schema: 
-        
-        -
-          Name: nickname
-          Required: true
-          Mutable: true
         
         -
           Name: email
           Required: true
           Mutable: true
         
+      
+      
       
       AutoVerifiedAttributes: !Ref autoVerifiedAttributes
       
@@ -200,25 +182,37 @@ Resources:
       Policies:
         PasswordPolicy:
           MinimumLength: !Ref passwordPolicyMinLength
-          RequireLowercase: true
-          RequireNumbers: true
-          RequireSymbols: true
-          RequireUppercase: true
+          RequireLowercase: false
+          RequireNumbers: false
+          RequireSymbols: false
+          RequireUppercase: false
+      
+      UsernameAttributes: !Ref usernameAttributes
+          
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: !Ref roleExternalId 
+        ExternalId: users38dd29dd_role_external_id
     
+  
+    
+    
+  
+    
+    
+  
+   
+    
+  # Updating lambda role with permissions to Cognito
+  
+  
   UserPoolClientWeb:
   # Created provide application access to user pool
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: role_app_clientWeb
-      
-      ReadAttributes: !Ref userpoolClientReadAttributes
-      WriteAttributes: !Ref userpoolClientWriteAttributes
+      ClientName: users38dd29dd_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -229,9 +223,6 @@ Resources:
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
       ClientName: !Ref userpoolClientName
-      
-      ReadAttributes: !Ref userpoolClientReadAttributes
-      WriteAttributes: !Ref userpoolClientWriteAttributes
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -279,12 +270,12 @@ Resources:
             - '       response.send(event, context, response.SUCCESS, {''appSecret'': res.UserPoolClient.ClientSecret});'   
             - '     })'
             - '     .catch((err) => {'
-            - '       response.send(event, context, response.FAILURE, {err});'
+            - '       response.send(event, context, response.FAILED, {err});'
             - '     });'
             - ' }'
             - '};'
       Handler: index.handler
-      Runtime: nodejs6.10
+      Runtime: nodejs8.10
       Timeout: '300'
       Role: !GetAtt 
         - UserPoolClientRole
@@ -296,7 +287,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: !Ref userpoolClientLambdaPolicy
+      PolicyName: users38dd29dd_userpoolclient_lambda_iam_policy
       Roles: 
         - !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',[!Ref userpoolClientLambdaRole, '-', !Ref env]]]
       PolicyDocument:
@@ -313,7 +304,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: !Ref userpoolClientLogPolicy
+      PolicyName: users38dd29dd_userpoolclient_lambda_log_policy
       Roles: 
         - !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',[!Ref userpoolClientLambdaRole, '-', !Ref env]]]
       PolicyDocument:
@@ -340,15 +331,20 @@ Resources:
       userpoolId: !Ref UserPool
     DependsOn: UserPoolClientLogPolicy
   
+
+  
+  
+
+  
     
   # BEGIN IDENTITY POOL RESOURCES
   
-  
+ 
   IdentityPool:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties: 
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'role', !Join ['',['role', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'users', !Join ['',['users', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient
@@ -387,6 +383,8 @@ Outputs :
     Value: !GetAtt IdentityPool.Name 
   
   
+  
+  
   UserPoolId:
     Value: !Ref 'UserPool'
     Description:  Id for the user pool
@@ -404,5 +402,6 @@ Outputs :
    
    
   
+   
    
   

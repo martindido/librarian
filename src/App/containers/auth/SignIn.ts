@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
-import { authenticateSync, signInSync } from '../../actions/sync';
+import { goodreadsSignIn } from '../../actions/goodreads';
+import { signInSync } from '../../actions/sync';
 import SignIn from '../../components/auth/SignIn';
 import { Action } from '../../types/Action';
 
@@ -11,7 +12,7 @@ const mapDispatchToProps = (dispatch: Dispatch<Action>) =>
     bindActionCreators(
         {
             signInSync,
-            authenticateSync
+            goodreadsSignIn
         },
         dispatch
     );

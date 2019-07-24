@@ -40,7 +40,7 @@ export default class SignUp extends Component<SignUpProps> {
             return <Redirect to={'/sign-up-confirm'} />;
         }
         return (
-            <Page id='SignUp' description='Role sign up' withHeader={false}>
+            <Page id='SignUp' description='Librarian sign up' withHeader={false}>
                 <Grid centered textAlign='center' verticalAlign='middle'>
                     <Grid.Column className='wrapper'>
                         <Header as='h2' color='black' textAlign='center' inverted>
