@@ -1,13 +1,14 @@
-import { SIGN_UP_CONFIRM } from '../../constants/actions';
-import { signUpConfirmSuccess, signUpConfirmError } from '../../actions/auth';
-import { ofType } from 'redux-observable';
-import { switchMap } from 'rxjs/operators';
 import { Auth } from 'aws-amplify';
-import { createLogger } from '../../utils';
-import { SignUpConfirmAction } from '../../types/Action/Auth';
+import { ofType } from 'redux-observable';
 import { ActionsObservable } from 'redux-observable';
+import { switchMap } from 'rxjs/operators';
+
+import { signUpConfirmError, signUpConfirmSuccess } from '../../actions/auth';
+import { SIGN_UP_CONFIRM } from '../../constants/actions';
 import { Action } from '../../types/Action';
+import { SignUpConfirmAction } from '../../types/Action/Auth';
 import { Confirmation } from '../../types/Auth';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'auth', 'signUpConfirm']);
 

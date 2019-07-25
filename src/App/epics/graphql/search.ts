@@ -1,5 +1,5 @@
-import { API, graphqlOperation } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { graphqlOperation, API } from 'aws-amplify';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { forkJoin, timer } from 'rxjs';
 import { debounce, map, switchMap } from 'rxjs/operators';
 
@@ -21,10 +21,10 @@ export default (action$: ActionsObservable<SearchAllAction>) =>
         switchMap((action: SearchAllAction) => {
             return forkJoin(searchWorldsFork(action.payload), searchGamesFork(action.payload));
         }),
-        map(categories => {
+        map((categories) => {
             const searchResults: SearchResults = {};
 
-            categories.forEach(category => {
+            categories.forEach((category) => {
                 if (category.results.length) {
                     searchResults[category.name] = category;
                 }
@@ -43,7 +43,7 @@ async function searchWorldsFork(value: string) {
     try {
         const results = await searchWorlds(value);
 
-        results.forEach(result =>
+        results.forEach((result) =>
             category.results.push({
                 title: result.name,
                 path: `/worlds/${result.id}`
@@ -64,7 +64,7 @@ async function searchGamesFork(value: string) {
     try {
         const results = await searchGames(value);
 
-        results.forEach(result =>
+        results.forEach((result) =>
             category.results.push({
                 title: result.name,
                 path: `/worlds/${result.world.id}/games/${result.id}`

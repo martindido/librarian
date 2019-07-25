@@ -6,7 +6,7 @@ export type SpinnerProps = {
     color?: string;
     className?: string;
     style?: object;
-}
+};
 
 export type AtomSpinner = StatelessComponent<SpinnerProps>;
 export type BreedingRhombusSpinner = StatelessComponent<SpinnerProps>;

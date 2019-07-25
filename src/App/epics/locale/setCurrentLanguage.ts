@@ -1,5 +1,5 @@
 import { Auth } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { setCurrentLanguageError, setCurrentLanguageSuccess } from '../../actions/locale';

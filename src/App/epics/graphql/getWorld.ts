@@ -1,5 +1,5 @@
-import { API, graphqlOperation, Storage } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { graphqlOperation, API, Storage } from 'aws-amplify';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { getWorldError, getWorldSuccess } from '../../actions/graphql';
@@ -39,7 +39,9 @@ async function getWorld(variables: GetWorldQueryVariables) {
             response.data.getWorld.games.items.map(async (game: Game) => {
                 try {
                     game.logo.src = (await Storage.get(`${game.id}.${game.logo.extension}`)) as string;
-                } catch (error) {}
+                } catch (error) {
+                    logger.error(error);
+                }
                 return game;
             })
         )
@@ -47,6 +49,8 @@ async function getWorld(variables: GetWorldQueryVariables) {
 
     try {
         world.logo.src = (await Storage.get(`${world.id}.${world.logo.extension}`)) as string;
-    } catch (error) {}
+    } catch (error) {
+        logger.error(error);
+    }
     return world;
 }

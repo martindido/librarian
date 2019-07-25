@@ -93,7 +93,7 @@ export default class LibrarianServer extends Server {
     private static readonly SERVER_SESSION_NAME = 'lwsid';
     private static readonly SERVER_SESSION_UNSET = 'destroy';
     private static readonly SERVER_STORE_TABLE = 'library-sessions';
-    private static readonly SERVER_STARTED = 'Librarian Server started on port: ';
+    private static readonly SERVER_STARTED = 'started port: ';
 
     private static logger = createLogger('server');
 

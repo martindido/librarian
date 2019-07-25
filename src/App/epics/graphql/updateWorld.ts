@@ -1,5 +1,5 @@
-import { API, graphqlOperation } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { graphqlOperation, API } from 'aws-amplify';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { updateWorldError, updateWorldSuccess } from '../../actions/graphql';

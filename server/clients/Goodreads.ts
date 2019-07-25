@@ -303,6 +303,7 @@ export default class GoodreadsClient {
 //    */
 
 //   var Goodreads = function Goodreads(credentials, callbackURL) {
+// tslint:disable-next-line: max-line-length
 //     if (!credentials || !credentials.key || !credentials.secret) throw new GoodreadsApiError('Please pass your API key and secret.', 'Goodreads()');
 //     if (callbackURL) initOAuth(callbackURL);
 
@@ -396,6 +397,7 @@ export default class GoodreadsClient {
 //         OAUTH.getOAuthRequestToken(function (error, oAuthToken, oAuthTokenSecret, results) {
 //           if (error) reject(new GoodreadsApiError(error.message, 'getRequestToken()'));
 
+// tslint:disable-next-line: max-line-length
 //           var url = URL + '/oauth/authorize?oauth_token=' + oAuthToken + '&oauth_callback=' + OAUTH._authorize_callback;
 //           _setOAuthToken({ OAUTH_TOKEN: oAuthToken, OAUTH_TOKEN_SECRET: oAuthTokenSecret });
 
@@ -417,6 +419,7 @@ export default class GoodreadsClient {
 
 //         if (OAUTH_TOKEN && OAUTH_TOKEN_SECRET && OAUTH) {
 
+// tslint:disable-next-line: max-line-length
 //           OAUTH.getOAuthAccessToken(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, 1, function (error, accessToken, accessTokenSecret, results) {
 //             if (error) reject(new GoodreadsApiError(error.data.split("\n")[0], 'getAccessToken()'));
 
@@ -720,6 +723,7 @@ export default class GoodreadsClient {
 //      * @access public
 //      * @param {string} id user ID
 //      * @param {string} shelf name of users shelf
+// tslint:disable-next-line: max-line-length
 //      * @param {object} queryOptions object with properties: sort {string}, query {string}, oder {'a' or 'd'}, page {number}, per_page {number, 1-200}
 //      * @returns {promise} returns books on the given shelf
 //      */

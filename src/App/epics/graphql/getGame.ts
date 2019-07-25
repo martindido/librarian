@@ -1,5 +1,5 @@
-import { API, graphqlOperation, Storage } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { graphqlOperation, API, Storage } from 'aws-amplify';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { getGameError, getGameSuccess } from '../../actions/graphql';
@@ -35,7 +35,7 @@ async function getGame(variables: GetGameQueryVariables) {
     const game = response.data.getGame;
 
     try {
-        game.logo.src = await Storage.get(`${game.id}.${game.logo.extension}`) as string;
+        game.logo.src = (await Storage.get(`${game.id}.${game.logo.extension}`)) as string;
     } catch (error) {
         // NOOP
     }

@@ -1,5 +1,5 @@
 import { Storage } from 'aws-amplify';
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 
 import { uploadFileError, uploadFileSuccess } from '../../actions/storage';

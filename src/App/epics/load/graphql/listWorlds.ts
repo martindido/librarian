@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { map, mergeMap, startWith, take } from 'rxjs/operators';
 
 import { listWorlds, setWorlds } from '../../../actions/graphql';
@@ -10,16 +10,20 @@ import { LoadWorldsAction } from '../../../types/Action/Load';
 export default (action$: ActionsObservable<LoadWorldsAction | ListWorldsSuccessAction | ListWorldsErrorAction>) =>
     action$.pipe(
         ofType(LOAD_WORLDS),
-        mergeMap(action => [setLoading(true), action]),
-        mergeMap(action => {
-            if (action.type === SET_LOADING) {
-                return [action];
+        mergeMap((loadWorldsAction) => [setLoading(true), loadWorldsAction]),
+        mergeMap((SetLoadingOrLoadWorldsAction) => {
+            if (SetLoadingOrLoadWorldsAction.type === SET_LOADING) {
+                return [SetLoadingOrLoadWorldsAction];
             }
             return action$.pipe(
                 ofType(LIST_WORLDS_SUCCESS, LIST_WORLDS_ERROR),
                 take(1),
-                map(action => (action.type === LIST_WORLDS_SUCCESS ? setWorlds(action.payload) : setNotFound(true))),
-                mergeMap(action => [action, setLoading(false)]),
+                map((listWorldsSuccessOrErrorAction) =>
+                    listWorldsSuccessOrErrorAction.type === LIST_WORLDS_SUCCESS
+                        ? setWorlds(listWorldsSuccessOrErrorAction.payload)
+                        : setNotFound(true)
+                ),
+                mergeMap((setWorldsOrNotFoundAction) => [setWorldsOrNotFoundAction, setLoading(false)]),
                 startWith(listWorlds())
             );
         })

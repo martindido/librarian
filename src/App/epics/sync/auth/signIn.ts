@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { mergeMap, startWith, take, tap } from 'rxjs/operators';
 
 import { signIn } from '../../../actions/auth';

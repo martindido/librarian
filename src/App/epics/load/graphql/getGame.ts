@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { map, mergeMap, startWith, take } from 'rxjs/operators';
 
 import { getGame, setGame } from '../../../actions/graphql';
@@ -10,17 +10,21 @@ import { LoadGameAction } from '../../../types/Action/Load';
 export default (action$: ActionsObservable<LoadGameAction | GetGameSuccessAction | GetGameErrorAction>) =>
     action$.pipe(
         ofType(LOAD_GAME),
-        mergeMap(action => [setLoading(true), action]),
-        mergeMap(action => {
-            if (action.type === SET_LOADING) {
-                return [action];
+        mergeMap((loadGameAction) => [setLoading(true), loadGameAction]),
+        mergeMap((SetLoadingOrLoadGameAction) => {
+            if (SetLoadingOrLoadGameAction.type === SET_LOADING) {
+                return [SetLoadingOrLoadGameAction];
             }
             return action$.pipe(
                 ofType(GET_GAME_SUCCESS, GET_GAME_ERROR),
                 take(1),
-                map(action => (action.type === GET_GAME_SUCCESS ? setGame(action.payload) : setNotFound(true))),
-                mergeMap(action => [action, setLoading(false)]),
-                startWith(getGame((action as LoadGameAction).payload))
+                map((loadGameSuccessOrErrorAction) =>
+                    loadGameSuccessOrErrorAction.type === GET_GAME_SUCCESS
+                        ? setGame(loadGameSuccessOrErrorAction.payload)
+                        : setNotFound(true)
+                ),
+                mergeMap((setGameOrNotFoundAction) => [setGameOrNotFoundAction, setLoading(false)]),
+                startWith(getGame((SetLoadingOrLoadGameAction as LoadGameAction).payload))
             );
         })
     );

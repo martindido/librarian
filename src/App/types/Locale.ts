@@ -1,9 +1,9 @@
-export type Initialize = Function;
+export type Initialize = () => void;
 
-export type SetActiveLanguage = Function;
+export type SetActiveLanguage = () => void;
 
-export type Translate = Function;
+export type Translate = () => void;
 
-export type LocalizedReducer = Function;
+export type LocalizedReducer = () => void;
 
 export type Language = 'en' | 'es';

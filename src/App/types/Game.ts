@@ -1,5 +1,5 @@
-import { World } from './World';
 import { File } from './Storage';
+import { World } from './World';
 
 export type Game = {
     id: string;

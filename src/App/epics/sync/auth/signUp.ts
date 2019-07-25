@@ -1,4 +1,4 @@
-import { ActionsObservable, ofType } from 'redux-observable';
+import { ofType, ActionsObservable } from 'redux-observable';
 import { mergeMap, startWith, take, tap } from 'rxjs/operators';
 
 import { signUp } from '../../../actions/auth';
@@ -10,7 +10,7 @@ export default (action$: ActionsObservable<SignUpSyncAction | SignUpSuccessActio
     action$
         .ofType<SignUpSyncAction>(SIGN_UP_SYNC)
         .pipe(
-            mergeMap(signUpSyncAction =>
+            mergeMap((signUpSyncAction) =>
                 action$
                     .ofType<SignUpSuccessAction | SignUpErrorAction>(SIGN_UP_SUCCESS, SIGN_UP_ERROR)
                     .pipe(
