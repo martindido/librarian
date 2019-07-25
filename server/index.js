@@ -14,6 +14,7 @@
 //         mod.exports = `/static/media/${bn}`;
 //     }
 // });
+
 require('@babel/polyfill');
 require('@babel/register')({
     extensions: ['.js', '.jsx', '.ts', '.tsx'],

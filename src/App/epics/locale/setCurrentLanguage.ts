@@ -7,7 +7,7 @@ import { SET_CURRENT_LANGUAGE } from '../../constants/actions';
 import { Action } from '../../types/Action';
 import { SetCurrentLanguageAction } from '../../types/Action/Locale';
 import { Language } from '../../types/Locale';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'locale', 'setCurrentLanguage']);
 

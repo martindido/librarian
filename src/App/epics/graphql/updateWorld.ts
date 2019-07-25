@@ -9,7 +9,7 @@ import { Action } from '../../types/Action';
 import { UpdateWorldAction } from '../../types/Action/GraphQL';
 import { UpdateWorldResult } from '../../types/Api';
 import { UpdateWorldInput } from '../../types/GraphQL';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'graphql', 'updateWorld']);
 

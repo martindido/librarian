@@ -65,13 +65,13 @@
 // });
 
 import { Server } from '@overnightjs/core';
-import { Logger } from '@overnightjs/logger';
 import bodyParser from 'body-parser';
 import DynamoDBStore from 'connect-dynamodb';
-// import cookieParser from 'cookie-parser';
 import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
+
+import { createLogger } from '../src/commons/utils';
 
 import ApiController from './controllers/api';
 import AuthController from './controllers/auth';
@@ -80,8 +80,8 @@ import NotFoundController from './controllers/notFound';
 export default class LibrarianServer extends Server {
     constructor() {
         super(process.env.NODE_ENV === 'development');
+        LibrarianServer.logger.info('');
         this.setupStatic();
-        // this.setupCookieParser();
         this.setupBodyParser();
         this.setupSession();
         this.setupPassport();
@@ -95,13 +95,11 @@ export default class LibrarianServer extends Server {
     private static readonly SERVER_STORE_TABLE = 'library-sessions';
     private static readonly SERVER_STARTED = 'Librarian Server started on port: ';
 
+    private static logger = createLogger('server');
+
     private setupStatic = (): void => {
         this.app.use(express.static(LibrarianServer.SERVER_STATIC_PATH));
     }
-
-    // private setupCookieParser = (): void => {
-    //     this.app.use(cookieParser());
-    // }
 
     private setupBodyParser = (): void => {
         this.app.use(bodyParser.json());
@@ -143,8 +141,9 @@ export default class LibrarianServer extends Server {
     }
 
     public start = (port: number): void => {
+        LibrarianServer.logger.info('start');
         this.app.listen(port, () => {
-            Logger.Imp(LibrarianServer.SERVER_STARTED + port);
+            LibrarianServer.logger.info(LibrarianServer.SERVER_STARTED + port);
         });
     }
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import createLogger from '../utils/logger';
+import { createLogger } from '../utils';
 
 const logger = createLogger(['clients', 'goodreads']);
 

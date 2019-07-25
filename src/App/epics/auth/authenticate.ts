@@ -9,7 +9,7 @@ import { Action } from '../../types/Action';
 import { AuthenticateAction } from '../../types/Action/Auth';
 import { Authenticator } from '../../types/Auth';
 import { User } from '../../types/User';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'auth', 'authenticate']);
 

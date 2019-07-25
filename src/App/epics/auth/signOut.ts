@@ -7,7 +7,7 @@ import { unsetCurrentUser } from '../../actions/auth';
 import { SIGN_OUT } from '../../constants/actions';
 import { Action } from '../../types/Action';
 import { SignOutAction } from '../../types/Action/Auth';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'auth', 'signOut']);
 

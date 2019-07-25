@@ -8,7 +8,7 @@ import { listWorlds as listWorldsQuery } from '../../graphql/queries';
 import { Action } from '../../types/Action';
 import { ListWorldsAction } from '../../types/Action/GraphQL';
 import { ListWorldsResult } from '../../types/Api';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'graphql', 'listWorlds']);
 

@@ -7,7 +7,7 @@ import { UPLOAD_FILE } from '../../constants/actions';
 import { Action } from '../../types/Action';
 import { UploadFileAction } from '../../types/Action/Storage';
 import { S3File } from '../../types/Storage';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'storage', 'uploadFile']);
 

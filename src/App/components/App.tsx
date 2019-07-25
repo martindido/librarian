@@ -7,7 +7,7 @@ import * as translations from '../translations';
 import { Language } from '../types/Locale';
 import { AppProps } from '../types/Props/App';
 import { AuthenticateSync } from '../types/Sync';
-import createLogger from '../utils/logger';
+import { createLogger } from '../utils';
 
 const logger = createLogger(['components', 'app']);
 

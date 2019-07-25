@@ -2,8 +2,11 @@ import { OAuth } from 'oauth';
 import { Credentials } from 'passport-goodreads';
 import { xml2js, ElementCompact } from 'xml-js';
 
+import { createLogger } from '../../src/commons/utils';
+
 export default class GoodreadsClient {
     constructor() {
+        GoodreadsClient.logger.info('');
         this.oauth = new OAuth(
             GoodreadsClient.GOODREADS_REQUEST_URL,
             GoodreadsClient.GOODREADS_ACCESS_URL,
@@ -14,6 +17,8 @@ export default class GoodreadsClient {
             GoodreadsClient.GOODREADS_OAUTH_ENCRYPTION
         );
     }
+
+    private static logger = createLogger(['clients', 'goodreads']);
 
     private static readonly GOODREADS_KEY = '4DgGUgFPJmVjrIPYGaDRWQ';
     private static readonly GOODREADS_SECRET = 'ZaSi2UU7w8KVp6yUyl8cJImFrd31Vat1KdDSn3C3uA';
@@ -28,10 +33,11 @@ export default class GoodreadsClient {
 
     private oauth: OAuth;
     public async getAuthUser(credentials: Credentials) {
+        GoodreadsClient.logger.info('getAuthUser');
         try {
             return await this.get(credentials, 'user');
         } catch (error) {
-            console.log('error', error);
+            GoodreadsClient.logger.error(error);
         }
     }
 

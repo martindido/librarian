@@ -8,7 +8,7 @@ import { SIGN_IN } from '../../constants/actions';
 import { Action } from '../../types/Action';
 import { SignInAction } from '../../types/Action/Auth';
 import { Credentials } from '../../types/Auth';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'auth', 'signIn']);
 

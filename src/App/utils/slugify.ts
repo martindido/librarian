@@ -1,3 +1,3 @@
 import slugify from 'slugify';
 
-export default (string: string, options = { lower: true }) => slugify(string, options);
+export default (s: string, options = { lower: true }) => slugify(s, options);

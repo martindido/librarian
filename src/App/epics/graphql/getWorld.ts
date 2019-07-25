@@ -10,7 +10,7 @@ import { GetWorldAction } from '../../types/Action/GraphQL';
 import { GetWorldResult } from '../../types/Api';
 import { Game } from '../../types/Game';
 import { GetWorldQueryVariables } from '../../types/GraphQL';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'graphql', 'getWorld']);
 

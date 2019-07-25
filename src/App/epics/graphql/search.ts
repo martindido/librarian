@@ -9,7 +9,7 @@ import { searchGames as searchGamesQuery, searchWorlds as searchWorldsQuery } fr
 import { SearchAllAction } from '../../types/Action/GraphQL';
 import { SearchGamesResult, SearchWorldsResult } from '../../types/Api';
 import { SearchCategory, SearchResults } from '../../types/Search';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const loggerWorlds = createLogger(['epics', 'graphql', 'search', 'worlds']);
 const loggerGames = createLogger(['epics', 'graphql', 'search', 'games']);

@@ -3,7 +3,7 @@ import { signUpConfirmSuccess, signUpConfirmError } from '../../actions/auth';
 import { ofType } from 'redux-observable';
 import { switchMap } from 'rxjs/operators';
 import { Auth } from 'aws-amplify';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 import { SignUpConfirmAction } from '../../types/Action/Auth';
 import { ActionsObservable } from 'redux-observable';
 import { Action } from '../../types/Action';

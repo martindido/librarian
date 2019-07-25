@@ -9,7 +9,7 @@ import { Action } from '../../types/Action';
 import { UpdateGameAction } from '../../types/Action/GraphQL';
 import { UpdateGameResult } from '../../types/Api';
 import { UpdateGameInput } from '../../types/GraphQL';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'graphql', 'updateGame']);
 

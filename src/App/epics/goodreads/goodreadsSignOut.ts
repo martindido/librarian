@@ -7,7 +7,7 @@ import GoodreadsClient from '../../clients/Goodreads';
 import { GOODREADS_SIGN_OUT } from '../../constants/actions';
 import { Action } from '../../types/Action';
 import { GoodreadsSignOutAction } from '../../types/Action/Goodreads';
-import createLogger from '../../utils/logger';
+import { createLogger } from '../../utils';
 
 const logger = createLogger(['epics', 'goodreads', 'signOut']);
 

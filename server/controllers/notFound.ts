@@ -1,15 +1,21 @@
 import { ClassMiddleware, Controller, Get } from '@overnightjs/core';
-import { Logger } from '@overnightjs/logger';
 import { Request, Response } from 'express';
 
+import { createLogger } from '../../src/commons/utils';
 import idMiddleware from '../middlewares/id';
 
 @Controller('*')
 @ClassMiddleware([idMiddleware])
 export default class NotFoundController {
+    constructor() {
+        NotFoundController.logger.info('');
+    }
+
+    private static logger = createLogger(['controllers', 'auth', 'notFound']);
+
     @Get()
     protected async notFound(req: Request, res: Response) {
-        Logger.Err(`[${req.id}] Called notFound for ${req.baseUrl}`);
+        NotFoundController.logger.info('notFound');
         return res.sendStatus(404);
     }
 }
