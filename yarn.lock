@@ -1428,6 +1428,13 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/compression@0.0.36":
+  version "0.0.36"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/compression/-/compression-0.0.36.tgz#7646602ffbfc43ea48a8bf0b2f1d5e5f9d75c0d0"
+  integrity sha1-dkZgL/v8Q+pIqL8LLx1eX511wNA=
+  dependencies:
+    "@types/express" "*"
+
 "@types/connect@*":
   version "3.4.32"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
@@ -3984,6 +3991,11 @@ dotenv@6.2.0:
   version "6.2.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
   integrity sha1-lBwEEFNdlCyL7PKNPzV9vZ1HYGQ=
+
+dotenv@8.0.0:
+  version "8.0.0"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/dotenv/-/dotenv-8.0.0.tgz#ed310c165b4e8a97bb745b0a9d99c31bda566440"
+  integrity sha1-7TEMFltOipe7dFsKnZnDG9pWZEA=
 
 duplexer3@^0.1.4:
   version "0.1.4"

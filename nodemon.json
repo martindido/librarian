@@ -2,8 +2,5 @@
     "ignore": ["**/*.test.ts", "**/types/**/*", "**/mocks/**/*"],
     "watch": ["package.json", "server", "src/commons"],
     "exec": "node server",
-    "ext": "js,ts",
-    "env": {
-        "SERVER_DEBUG": "librarian:*"
-    }
+    "ext": "js,ts"
 }

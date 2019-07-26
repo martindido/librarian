@@ -1,19 +1,10 @@
-import debug from 'debug';
+import 'dotenv/config';
 
-import { Logger } from '../src/commons/types/Logger';
 import { createLogger } from '../src/commons/utils';
 
 import LibrarianServer from './server';
 
-let logger: Logger;
-
-function bootstrapLogger() {
-    if (process.env.SERVER_DEBUG) {
-        debug.enable(process.env.SERVER_DEBUG);
-    }
-    logger = createLogger('bootstrap');
-    logger.info('');
-}
+const logger = createLogger('bootstrap');
 
 function bootstrapUnhandledErrorHandlers() {
     process
@@ -33,6 +24,6 @@ function bootstrapServer() {
     librarianServer.start();
 }
 
-bootstrapLogger();
+logger.info('');
 bootstrapUnhandledErrorHandlers();
 bootstrapServer();
