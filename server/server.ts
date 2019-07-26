@@ -4,6 +4,7 @@ import compression from 'compression';
 import DynamoDBStore from 'connect-dynamodb';
 import express from 'express';
 import session from 'express-session';
+import helmet from 'helmet';
 import passport from 'passport';
 
 import { createLogger } from '../src/commons/utils';
@@ -18,6 +19,7 @@ export default class LibrarianServer extends Server {
     constructor() {
         super();
         LibrarianServer.logger.info('', process.env.NODE_ENV);
+        this.setupHelmet();
         this.setupCompression();
         this.setupStatic();
         this.setupBodyParser();
@@ -37,6 +39,10 @@ export default class LibrarianServer extends Server {
 
     private setupCompression = (): void => {
         this.app.use(compression());
+    }
+
+    private setupHelmet = (): void => {
+        this.app.use(helmet());
     }
 
     private setupStatic = (): void => {
