@@ -13,5 +13,5 @@ export default class AuthController {
         AuthController.logger.info('');
     }
 
-    private static logger = createLogger(['controllers', 'auth']);
+    private static logger = createLogger(['controllers', 'AuthController']);
 }

@@ -73,6 +73,8 @@ import passport from 'passport';
 
 import { createLogger } from '../src/commons/utils';
 
+import { SERVER_PORT, SERVER_STATIC_PATH } from './constants/server';
+import { SESSION_NAME, SESSION_SECRET, SESSION_STORE_TABLE, SESSION_UNSET } from './constants/session';
 import ApiController from './controllers/api';
 import AuthController from './controllers/auth';
 import NotFoundController from './controllers/notFound';
@@ -88,12 +90,12 @@ export default class LibrarianServer extends Server {
         this.setupControllers();
     }
 
-    private static readonly SERVER_STATIC_PATH = '/public';
-    private static readonly SERVER_SESSION_SECRET = 'library mouse';
-    private static readonly SERVER_SESSION_NAME = 'lwsid';
-    private static readonly SERVER_SESSION_UNSET = 'destroy';
-    private static readonly SERVER_STORE_TABLE = 'library-sessions';
-    private static readonly SERVER_STARTED = 'started port: ';
+    private static readonly SERVER_PORT = SERVER_PORT;
+    private static readonly SERVER_STATIC_PATH = SERVER_STATIC_PATH;
+    private static readonly SESSION_SECRET = SESSION_SECRET;
+    private static readonly SESSION_NAME = SESSION_NAME;
+    private static readonly SESSION_UNSET = SESSION_UNSET;
+    private static readonly SESSION_STORE_TABLE = SESSION_STORE_TABLE;
 
     private static logger = createLogger('server');
 
@@ -115,13 +117,13 @@ export default class LibrarianServer extends Server {
 
         this.app.use(
             session({
-                secret: LibrarianServer.SERVER_SESSION_SECRET,
+                secret: LibrarianServer.SESSION_SECRET,
                 resave: false,
                 saveUninitialized: false,
-                unset: LibrarianServer.SERVER_SESSION_UNSET,
-                name: LibrarianServer.SERVER_SESSION_NAME,
+                unset: LibrarianServer.SESSION_UNSET,
+                name: LibrarianServer.SESSION_NAME,
                 store: new Store({
-                    table: LibrarianServer.SERVER_STORE_TABLE
+                    table: LibrarianServer.SESSION_STORE_TABLE
                 })
             })
         );
@@ -140,10 +142,14 @@ export default class LibrarianServer extends Server {
         super.addControllers([apiController, authController, notFoundController]);
     }
 
-    public start = (port: number): void => {
+    public start = (): void => {
         LibrarianServer.logger.info('start');
-        this.app.listen(port, () => {
-            LibrarianServer.logger.info(LibrarianServer.SERVER_STARTED + port);
+        this.app.listen(LibrarianServer.SERVER_PORT, this.started);
+    }
+
+    private started = (): void => {
+        LibrarianServer.logger.info('started', {
+            port: LibrarianServer.SERVER_PORT
         });
     }
 }

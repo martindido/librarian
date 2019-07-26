@@ -13,5 +13,5 @@ export default class ApiController {
         ApiController.logger.info('');
     }
 
-    private static logger = createLogger(['controllers', 'api']);
+    private static logger = createLogger(['controllers', 'ApiController']);
 }

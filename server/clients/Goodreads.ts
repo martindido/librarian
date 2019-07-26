@@ -3,69 +3,100 @@ import { Credentials } from 'passport-goodreads';
 import { xml2js, ElementCompact } from 'xml-js';
 
 import { createLogger } from '../../src/commons/utils';
+import {
+    GOODREADS_CALLBACK,
+    GOODREADS_KEY,
+    GOODREADS_OAUTH_ENCRYPTION,
+    GOODREADS_OAUTH_VERSION,
+    GOODREADS_SECRET,
+    GOODREADS_URL_ACCESS_TOKEN,
+    GOODREADS_URL_GET_AUTH_USER,
+    GOODREADS_URL_GET_BOOK_BY_ISBN,
+    GOODREADS_URL_REQUEST_TOKEN
+} from '../constants/goodreads';
+import { Query } from '../types/Query';
 
 export default class GoodreadsClient {
-    constructor() {
+    constructor(credentials: Credentials) {
         GoodreadsClient.logger.info('');
-        this.oauth = new OAuth(
-            GoodreadsClient.GOODREADS_REQUEST_URL,
-            GoodreadsClient.GOODREADS_ACCESS_URL,
-            GoodreadsClient.GOODREADS_KEY,
-            GoodreadsClient.GOODREADS_SECRET,
-            GoodreadsClient.GOODREADS_OAUTH_VERSION,
-            GoodreadsClient.GOODREADS_OAUTH_CALLBACK,
-            GoodreadsClient.GOODREADS_OAUTH_ENCRYPTION
-        );
+        this.credentials = credentials;
     }
 
-    private static logger = createLogger(['clients', 'goodreads']);
+    private static readonly logger = createLogger(['clients', 'GoodreadsClient']);
+    private static readonly GOODREADS_KEY = GOODREADS_KEY;
+    private static readonly GOODREADS_SECRET = GOODREADS_SECRET;
+    private static readonly GOODREADS_URL_REQUEST_TOKEN = GOODREADS_URL_REQUEST_TOKEN;
+    private static readonly GOODREADS_URL_ACCESS_TOKEN = GOODREADS_URL_ACCESS_TOKEN;
+    private static readonly GOODREADS_OAUTH_VERSION = GOODREADS_OAUTH_VERSION;
+    private static readonly GOODREADS_OAUTH_ENCRYPTION = GOODREADS_OAUTH_ENCRYPTION;
+    private static readonly GOODREADS_URL_GET_AUTH_USER = GOODREADS_URL_GET_AUTH_USER;
+    private static readonly GOODREADS_URL_GET_BOOK_BY_ISBN = GOODREADS_URL_GET_BOOK_BY_ISBN;
+    private static readonly GOODREADS_CALLBACK = GOODREADS_CALLBACK;
 
-    private static readonly GOODREADS_KEY = '4DgGUgFPJmVjrIPYGaDRWQ';
-    private static readonly GOODREADS_SECRET = 'ZaSi2UU7w8KVp6yUyl8cJImFrd31Vat1KdDSn3C3uA';
-    private static readonly GOODREADS_HOST = 'https://www.goodreads.com';
-    private static readonly GOODREADS_REQUEST_URL = `${GoodreadsClient.GOODREADS_HOST}/oauth/request_token`;
-    private static readonly GOODREADS_ACCESS_URL = `${GoodreadsClient.GOODREADS_HOST}/oauth/access_token`;
-    private static readonly GOODREADS_OAUTH_VERSION = '1.0';
-    private static readonly GOODREADS_OAUTH_CALLBACK = null;
-    private static readonly GOODREADS_OAUTH_ENCRYPTION = 'HMAC-SHA1';
+    private credentials: Credentials;
+    private oauth: OAuth = new OAuth(
+        GoodreadsClient.GOODREADS_URL_REQUEST_TOKEN,
+        GoodreadsClient.GOODREADS_URL_ACCESS_TOKEN,
+        GoodreadsClient.GOODREADS_KEY,
+        GoodreadsClient.GOODREADS_SECRET,
+        GoodreadsClient.GOODREADS_OAUTH_VERSION,
+        GoodreadsClient.GOODREADS_CALLBACK,
+        GoodreadsClient.GOODREADS_OAUTH_ENCRYPTION
+    );
 
-    private static readonly GOODREADS_PATH_GET_AUTH_USER = `${GoodreadsClient.GOODREADS_HOST}/api/auth_user`;
-
-    private oauth: OAuth;
-    public async getAuthUser(credentials: Credentials) {
+    public async getAuthUser() {
         GoodreadsClient.logger.info('getAuthUser');
         try {
-            return await this.get(credentials, 'user');
+            return await this.get(GoodreadsClient.GOODREADS_URL_GET_AUTH_USER, 'user');
         } catch (error) {
             GoodreadsClient.logger.error(error);
         }
     }
 
-    private async get(credentials: Credentials, responseKey?: string) {
+    public async getBookByISBN(isbn: string) {
+        GoodreadsClient.logger.info('getBookByISBN', { isbn });
+
+        try {
+            const url = this.buildUrl(GoodreadsClient.GOODREADS_URL_GET_BOOK_BY_ISBN, { isbn });
+
+            return await this.get(url);
+        } catch (error) {
+            GoodreadsClient.logger.error(error);
+        }
+    }
+
+    private buildUrl = (path: string, params: Query = {}): string => {
+        let url = path;
+        // let extendedParams = Object.assign({}, params, {
+        //     key:
+        // });
+
+        Object.keys(params).forEach((key) => {
+            url = url.replace(`:${key}`, params[key]);
+        });
+        return url;
+    }
+
+    private async get(url: string, responseKey?: string) {
         return new Promise((resolve, reject) => {
-            this.oauth.get(
-                GoodreadsClient.GOODREADS_PATH_GET_AUTH_USER,
-                credentials.token,
-                credentials.secret,
-                (error, result) => {
-                    if (error) {
-                        reject(error);
-                    } else if (result) {
-                        resolve(this.parseXML(String(result), responseKey));
-                    } else {
-                        resolve();
-                    }
+            this.oauth.get(url, this.credentials.token, this.credentials.secret, (error, result) => {
+                if (error) {
+                    reject(error);
+                } else if (result) {
+                    resolve(this.parseXML(String(result), responseKey));
+                } else {
+                    resolve();
                 }
-            );
+            });
         });
     }
 
     private parseXML(xml: string, responseKey?: string) {
-        const parsed = xml2js<ElementCompact>(xml, {
+        const js = xml2js<ElementCompact>(xml, {
             compact: true
         }).GoodreadsResponse;
 
-        return responseKey ? parsed[responseKey] : parsed;
+        return responseKey ? js[responseKey] : js;
     }
 }
 

@@ -5,6 +5,8 @@ import passport from 'passport';
 import { DeserializeUserDone, SerializeUserDone, Strategy, User, Verify } from 'passport-goodreads';
 
 import { createLogger } from '../../../src/commons/utils';
+import { GOODREADS_CALLBACK, GOODREADS_KEY, GOODREADS_REDIRECTION, GOODREADS_SECRET } from '../../constants/goodreads';
+import { SESSION_NAME } from '../../constants/session';
 
 @Controller('goodreads')
 export default class GoodreadsAuthController {
@@ -13,11 +15,11 @@ export default class GoodreadsAuthController {
         GoodreadsAuthController.setupPassport();
     }
 
-    private static readonly GOODREADS_SESSION_NAME = 'lwsid';
-    private static readonly GOODREADS_KEY = '4DgGUgFPJmVjrIPYGaDRWQ';
-    private static readonly GOODREADS_SECRET = 'ZaSi2UU7w8KVp6yUyl8cJImFrd31Vat1KdDSn3C3uA';
-    private static readonly GOODREADS_CALLBACK = 'http://www.librarian.world:5000/auth/goodreads/callback';
-    private static readonly GOODREADS_REDIRECT = 'http://www.librarian.world:3000/';
+    private static readonly GOODREADS_KEY = GOODREADS_KEY;
+    private static readonly GOODREADS_SECRET = GOODREADS_SECRET;
+    private static readonly GOODREADS_CALLBACK = GOODREADS_CALLBACK;
+    private static readonly GOODREADS_REDIRECTION = GOODREADS_REDIRECTION;
+    private static readonly SESSION_NAME = SESSION_NAME;
 
     private static logger = createLogger(['controllers', 'auth', 'goodreads']);
 
@@ -61,28 +63,35 @@ export default class GoodreadsAuthController {
 
     @Get()
     @Middleware(passport.authenticate('goodreads'))
-    protected async authenticate(req: Request) {
-        GoodreadsAuthController.logger.info(`[${req.id}] authenticate`);
+    protected authenticate(req: Request): void {
+        GoodreadsAuthController.logger.info(req.id, 'authenticate');
     }
 
     @Delete()
-    protected async deauthenticate(req: Request, res: Response) {
-        GoodreadsAuthController.logger.info(`[${req.id}] deauthenticate`);
+    protected deauthenticate(req: Request, res: Response): Response {
+        GoodreadsAuthController.logger.info(req.id, 'deauthenticate');
         req.logout();
+        this.destroySession(req);
+        return res.clearCookie(GoodreadsAuthController.SESSION_NAME).sendStatus(OK);
+    }
+
+    private destroySession = (req: Request): void => {
         if (!req.session) {
-            res.sendStatus(OK);
             return;
         }
-        req.session.destroy(() => {
-            res.clearCookie(GoodreadsAuthController.GOODREADS_SESSION_NAME);
-            res.sendStatus(OK);
+        req.session.destroy((error) => {
+            if (error) {
+                GoodreadsAuthController.logger.error(req.id, 'destroySession', error);
+            } else {
+                GoodreadsAuthController.logger.info(req.id, 'destroySession');
+            }
         });
     }
 
     @Get('callback')
     @Middleware(passport.authenticate('goodreads', { failureRedirect: '/sign-in' }))
-    protected async callback(req: Request, res: Response) {
-        GoodreadsAuthController.logger.info(`[${req.id}] callback`);
-        res.redirect(GoodreadsAuthController.GOODREADS_REDIRECT);
+    protected async callback(req: Request, res: Response): Promise<void> {
+        GoodreadsAuthController.logger.info(req.id, 'callback');
+        res.redirect(GoodreadsAuthController.GOODREADS_REDIRECTION);
     }
 }
