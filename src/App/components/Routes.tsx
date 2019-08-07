@@ -8,8 +8,9 @@ import DualRoute from '../containers/routes/Dual';
 import UnauthenticatedRoute from '../containers/routes/Unauthenticated';
 import { path as GamePath, Game } from '../routes/Game';
 import { path as HomePath, Home } from '../routes/Home';
+import { Shelves } from '../routes/Shelves';
 import { path as WorldPath, World } from '../routes/World';
-import { Worlds } from '../routes/Worlds';
+// import { Worlds } from '../routes/Worlds';
 import { path as AdminCreateGamePath, AdminCreateGame } from '../routes/admin/create/Game';
 import { path as AdminCreateWorldPath, AdminCreateWorld } from '../routes/admin/create/World';
 import { path as AdminUpdateGamePath, AdminUpdateGame } from '../routes/admin/update/Game';
@@ -31,7 +32,7 @@ export default class Routes extends Component<RoutesProps> {
     render() {
         return (
             <Switch>
-                <DualRoute exact path={HomePath} unauthenticatedComponent={Home} authenticatedComponent={Worlds} />
+                <DualRoute exact path={HomePath} unauthenticatedComponent={Home} authenticatedComponent={Shelves} />
                 <AdminRoute exact path={AdminCreateWorldPath} component={AdminCreateWorld} />
                 <AdminRoute exact path={AdminUpdateWorldPath} component={AdminUpdateWorld} />
                 <AdminRoute exact path={AdminCreateGamePath} component={AdminCreateGame} />

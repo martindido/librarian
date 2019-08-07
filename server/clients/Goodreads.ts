@@ -1,8 +1,10 @@
+import axios from 'axios';
 import { OAuth } from 'oauth';
 import { Credentials } from 'passport-goodreads';
-import { xml2js, ElementCompact } from 'xml-js';
+import { parseString } from 'xml2js';
+import { parseBooleans, parseNumbers } from 'xml2js/lib/processors';
 
-import { createLogger } from '../../src/commons/utils';
+import { createLogger, deepMap } from '../../src/commons/utils';
 import {
     GOODREADS_CALLBACK,
     GOODREADS_KEY,
@@ -12,29 +14,45 @@ import {
     GOODREADS_URL_ACCESS_TOKEN,
     GOODREADS_URL_GET_AUTH_USER,
     GOODREADS_URL_GET_BOOK_BY_ISBN,
+    GOODREADS_URL_GET_SHELVES,
     GOODREADS_URL_REQUEST_TOKEN
 } from '../constants/goodreads';
-import { Query } from '../types/Query';
+import {
+    GoodreadsBook,
+    GoodreadsGetAuthUserParsedResponse,
+    GoodreadsGetAuthUserResponse,
+    GoodreadsGetBookParsedResponse,
+    GoodreadsGetBookResponse,
+    GoodreadsGetShelvesParsedResponse,
+    GoodreadsGetShelvesResponse,
+    GoodreadsRequestParams,
+    GoodreadsResponseRaw,
+    GoodreadsShelf,
+    GoodreadsUser
+} from '../types/goodreads';
+
+type MaybeUndefined<T> = T extends null | undefined ? undefined : never;
 
 export default class GoodreadsClient {
     constructor(credentials: Credentials) {
-        GoodreadsClient.logger.info('');
         this.credentials = credentials;
     }
 
     private static readonly logger = createLogger(['clients', 'GoodreadsClient']);
+    private static readonly rSnakeCase = /([-_][a-z])/g;
     private static readonly GOODREADS_KEY = GOODREADS_KEY;
     private static readonly GOODREADS_SECRET = GOODREADS_SECRET;
     private static readonly GOODREADS_URL_REQUEST_TOKEN = GOODREADS_URL_REQUEST_TOKEN;
     private static readonly GOODREADS_URL_ACCESS_TOKEN = GOODREADS_URL_ACCESS_TOKEN;
     private static readonly GOODREADS_OAUTH_VERSION = GOODREADS_OAUTH_VERSION;
+    private static readonly GOODREADS_CALLBACK = GOODREADS_CALLBACK;
     private static readonly GOODREADS_OAUTH_ENCRYPTION = GOODREADS_OAUTH_ENCRYPTION;
     private static readonly GOODREADS_URL_GET_AUTH_USER = GOODREADS_URL_GET_AUTH_USER;
     private static readonly GOODREADS_URL_GET_BOOK_BY_ISBN = GOODREADS_URL_GET_BOOK_BY_ISBN;
-    private static readonly GOODREADS_CALLBACK = GOODREADS_CALLBACK;
+    private static readonly GOODREADS_URL_GET_SHELVES = GOODREADS_URL_GET_SHELVES;
 
     private credentials: Credentials;
-    private oauth: OAuth = new OAuth(
+    private oauth = new OAuth(
         GoodreadsClient.GOODREADS_URL_REQUEST_TOKEN,
         GoodreadsClient.GOODREADS_URL_ACCESS_TOKEN,
         GoodreadsClient.GOODREADS_KEY,
@@ -44,32 +62,101 @@ export default class GoodreadsClient {
         GoodreadsClient.GOODREADS_OAUTH_ENCRYPTION
     );
 
-    public async getAuthUser() {
+    public async getAuthUser(): Promise<GoodreadsUser> {
         GoodreadsClient.logger.info('getAuthUser');
         try {
-            return await this.get(GoodreadsClient.GOODREADS_URL_GET_AUTH_USER, 'user');
+            const response = await this.get<GoodreadsGetAuthUserResponse, GoodreadsGetAuthUserParsedResponse>(
+                true,
+                GoodreadsClient.GOODREADS_URL_GET_AUTH_USER,
+                {}
+            );
+
+            return this.removeResponseWrapper(response, 'GoodreadsResponse', 'user');
         } catch (error) {
             GoodreadsClient.logger.error(error);
+            throw error;
         }
     }
 
-    public async getBookByISBN(isbn: string) {
+    public async getShelves(): Promise<GoodreadsShelf[]> {
+        GoodreadsClient.logger.info('getShelves');
+
+        try {
+            const response = await this.get<GoodreadsGetShelvesResponse, GoodreadsGetShelvesParsedResponse>(
+                true,
+                GoodreadsClient.GOODREADS_URL_GET_SHELVES,
+                {}
+            );
+
+            return this.removeResponseWrapper(response, 'GoodreadsResponse', 'shelves', 'userShelf');
+        } catch (error) {
+            GoodreadsClient.logger.error(error);
+            throw error;
+        }
+    }
+
+    public async getBookByISBN(isbn: string): Promise<GoodreadsBook> {
         GoodreadsClient.logger.info('getBookByISBN', { isbn });
 
         try {
-            const url = this.buildUrl(GoodreadsClient.GOODREADS_URL_GET_BOOK_BY_ISBN, { isbn });
+            const response = await this.get<GoodreadsGetBookResponse, GoodreadsGetBookParsedResponse>(
+                false,
+                GoodreadsClient.GOODREADS_URL_GET_BOOK_BY_ISBN,
+                { isbn }
+            );
 
-            return await this.get(url);
+            return this.removeResponseWrapper(response, 'GoodreadsResponse', 'book');
         } catch (error) {
             GoodreadsClient.logger.error(error);
+            throw error;
         }
     }
 
-    private buildUrl = (path: string, params: Query = {}): string => {
+    private async get<GoodreadsResponse, GoodreadsParsedResponse>(
+        oauth: boolean,
+        path: string,
+        params: GoodreadsRequestParams
+    ): Promise<GoodreadsParsedResponse> {
+        const response = await (oauth
+            ? this.getWithOAuth(path, params as GoodreadsRequestParams)
+            : this.getWithoutOAuth(path, params as GoodreadsRequestParams));
+
+        return this.parseXML<GoodreadsResponse, GoodreadsParsedResponse>(response);
+    }
+
+    public async getWithOAuth(path: string, params: GoodreadsRequestParams): Promise<GoodreadsResponseRaw> {
+        return new Promise((resolve, reject) => {
+            GoodreadsClient.logger.info('getWithOAuth', path);
+            this.oauth.get(
+                this.buildUrl(path, params),
+                this.credentials.token,
+                this.credentials.secret,
+                (error, result) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(result ? String(result) : result);
+                    }
+                }
+            );
+        });
+    }
+
+    private async getWithoutOAuth(path: string, params: GoodreadsRequestParams = {}): Promise<GoodreadsResponseRaw> {
+        GoodreadsClient.logger.info('getWithoutOAuth', path);
+
+        const response = await axios.get<GoodreadsResponseRaw>(
+            this.buildUrl(path, {
+                key: GOODREADS_KEY,
+                ...params
+            })
+        );
+
+        return response.data;
+    }
+
+    private buildUrl = (path: string, params: GoodreadsRequestParams = {}): string => {
         let url = path;
-        // let extendedParams = Object.assign({}, params, {
-        //     key:
-        // });
 
         Object.keys(params).forEach((key) => {
             url = url.replace(`:${key}`, params[key]);
@@ -77,26 +164,102 @@ export default class GoodreadsClient {
         return url;
     }
 
-    private async get(url: string, responseKey?: string) {
+    private parseXML<GoodreadsResponse, GoodreadsParsedResponse>(
+        xml: GoodreadsResponseRaw
+    ): Promise<GoodreadsParsedResponse> {
         return new Promise((resolve, reject) => {
-            this.oauth.get(url, this.credentials.token, this.credentials.secret, (error, result) => {
-                if (error) {
-                    reject(error);
-                } else if (result) {
-                    resolve(this.parseXML(String(result), responseKey));
-                } else {
-                    resolve();
+            parseString(
+                xml,
+                {
+                    async: true,
+                    trim: true,
+                    explicitArray: false,
+                    emptyTag: undefined,
+                    mergeAttrs: true,
+                    valueProcessors: [parseNumbers, parseBooleans],
+                    tagNameProcessors: [
+                        (name: string) =>
+                            name.replace(GoodreadsClient.rSnakeCase, (group) =>
+                                group
+                                    .toUpperCase()
+                                    .replace('-', '')
+                                    .replace('_', '')
+                            )
+                    ]
+                },
+                (error, response: GoodreadsResponse) => {
+                    if (error) {
+                        return reject(error);
+                    }
+                    return resolve(this.parseResponse<GoodreadsResponse, GoodreadsParsedResponse>(response));
                 }
-            });
+            );
         });
     }
 
-    private parseXML(xml: string, responseKey?: string) {
-        const js = xml2js<ElementCompact>(xml, {
-            compact: true
-        }).GoodreadsResponse;
+    private parseResponse<GoodreadsResponse, GoodreadsParsedResponse>(
+        response: GoodreadsResponse
+    ): GoodreadsParsedResponse {
+        return deepMap(
+            response,
+            (value, key) => {
+                if (typeof value === 'object') {
+                    if (value.nil) {
+                        return null;
+                    }
+                    if (value.type === 'integer') {
+                        return Number(value._);
+                    }
+                    if (value.type === 'boolean') {
+                        return value._ === 'true';
+                    }
+                }
+                return value;
+            },
+            {
+                shouldMapObject: (value) => {
+                    return typeof value === 'object' && !('_' in value) && !('nil' in value);
+                }
+            }
+        ) as GoodreadsParsedResponse;
+    }
 
-        return responseKey ? js[responseKey] : js;
+    private removeResponseWrapper<Response, Key1 extends keyof NonNullable<Response>>(
+        response: Response,
+        key1: Key1
+    ): NonNullable<Response>[Key1] | MaybeUndefined<Response>;
+
+    private removeResponseWrapper<
+        Response,
+        Key1 extends keyof NonNullable<Response>,
+        Key2 extends keyof NonNullable<NonNullable<Response>[Key1]>
+    >(
+        response: Response,
+        key1: Key1,
+        key2: Key2
+    ):
+        | NonNullable<NonNullable<Response>[Key1]>[Key2]
+        | MaybeUndefined<Response>
+        | MaybeUndefined<NonNullable<Response>[Key1]>;
+
+    private removeResponseWrapper<
+        Response,
+        Key1 extends keyof NonNullable<Response>,
+        Key2 extends keyof NonNullable<NonNullable<Response>[Key1]>,
+        Key3 extends keyof NonNullable<NonNullable<NonNullable<Response>[Key1]>[Key2]>
+    >(
+        response: Response,
+        key1: Key1,
+        key2: Key2,
+        key3: Key3
+    ):
+        | NonNullable<NonNullable<NonNullable<Response>[Key1]>[Key2]>[Key3]
+        | MaybeUndefined<Response>
+        | MaybeUndefined<NonNullable<Response>[Key1]>
+        | MaybeUndefined<NonNullable<NonNullable<Response>[Key1]>[Key2]>;
+
+    private removeResponseWrapper(response: any, ...keys: string[]): any {
+        return keys.reduce((result, key) => (result == null ? undefined : result[key]), response);
     }
 }
 

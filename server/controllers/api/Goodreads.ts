@@ -28,9 +28,24 @@ export default class GoodreadsApiController {
         }
     }
 
+    @Get('shelves')
+    protected async getShelves(req: Request, res: Response): Promise<Response> {
+        GoodreadsApiController.logger.info(req.id, 'getShelves');
+
+        try {
+            const goodreadsClient = new GoodreadsClient(req.user.credentials);
+            const shelves = await goodreadsClient.getShelves();
+
+            return res.json(shelves);
+        } catch (error) {
+            GoodreadsApiController.logger.error(req.id, 'getShelves', error);
+            return res.sendStatus(NOT_FOUND);
+        }
+    }
+
     @Get('books/isbn/:isbn')
-    protected async getByISBN(req: Request, res: Response): Promise<Response> {
-        GoodreadsApiController.logger.info(req.id, 'getByISBN', req.params);
+    protected async getBookByISBN(req: Request, res: Response): Promise<Response> {
+        GoodreadsApiController.logger.info(req.id, 'getBookByISBN', req.params);
 
         try {
             const goodreadsClient = new GoodreadsClient(req.user.credentials);
@@ -38,7 +53,7 @@ export default class GoodreadsApiController {
 
             return res.json(book);
         } catch (error) {
-            GoodreadsApiController.logger.error(req.id, 'getByISBN', error);
+            GoodreadsApiController.logger.error(req.id, 'getBookByISBN', error);
             return res.sendStatus(NOT_FOUND);
         }
     }

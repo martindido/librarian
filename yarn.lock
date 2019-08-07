@@ -1691,6 +1691,13 @@
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
+"@types/xml2js@0.4.4":
+  version "0.4.4"
+  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/xml2js/-/xml2js-0.4.4.tgz#2093d94359a201806d997dccefc80153db311c66"
+  integrity sha1-IJPZQ1miAYBtmX3M78gBU9sxHGY=
+  dependencies:
+    "@types/node" "*"
+
 "@types/yargs@^12.0.2", "@types/yargs@^12.0.9":
   version "12.0.12"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
@@ -2480,13 +2487,6 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
-
-basic-auth@~2.0.0:
-  version "2.0.1"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
-  integrity sha1-uZgnm/R844NEtPPPkW1Gebv1Hjo=
-  dependencies:
-    safe-buffer "5.1.2"
 
 batch@0.6.1:
   version "0.6.1"
@@ -7260,17 +7260,6 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
   dependencies:
     minimist "0.0.8"
 
-morgan@1.9.1:
-  version "1.9.1"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
-  integrity sha1-Co0Wc0odmvvIJLmd+H5zjlji2lk=
-  dependencies:
-    basic-auth "~2.0.0"
-    debug "2.6.9"
-    depd "~1.1.2"
-    on-finished "~2.3.0"
-    on-headers "~1.0.1"
-
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7678,7 +7667,7 @@ on-finished@~2.3.0:
   dependencies:
     ee-first "1.1.1"
 
-on-headers@~1.0.1, on-headers@~1.0.2:
+on-headers@~1.0.2:
   version "1.0.2"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
   integrity sha1-dysK5qqlJcOZ5Imt+tkMQD6zwo8=
@@ -11657,13 +11646,6 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
   integrity sha1-SWsswQnsqNus/i3HK2A8F8WHCtQ=
-
-xml-js@1.6.11:
-  version "1.6.11"
-  resolved "https://olx.jfrog.io/olx/api/npm/nc-regional-almea-panamera-npm/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
-  integrity sha1-kn0vaUf38cGaMW3Y7qNhTosY+Ok=
-  dependencies:
-    sax "^1.2.4"
 
 xml-name-validator@^3.0.0:
   version "3.0.0"

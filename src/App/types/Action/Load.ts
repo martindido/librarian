@@ -1,4 +1,10 @@
-import { loadGame, loadWorld, loadWorlds } from '../../actions/load';
+import { loadGame, loadShelves, loadWorld, loadWorlds } from '../../actions/load';
+
+export type LoadShelvesAction = {
+    type: 'LOAD_SHELVES';
+};
+
+export type LoadShelvesActionCreator = typeof loadShelves;
 
 export type LoadWorldsAction = {
     type: 'LOAD_WORLDS';

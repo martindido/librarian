@@ -7,6 +7,6 @@ const logger = createLogger(['middlewares', 'idMiddleware']);
 
 export default function idMiddleware(req: Request, res: Response, next: NextFunction) {
     req.id = uuidv4();
-    logger.info('idMiddleware', req.id);
+    logger.info(req.id);
     next();
 }

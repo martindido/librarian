@@ -24,6 +24,6 @@ function bootstrapServer() {
     librarianServer.start();
 }
 
-logger.info('');
+logger.info(process.env.NODE_ENV);
 bootstrapUnhandledErrorHandlers();
 bootstrapServer();

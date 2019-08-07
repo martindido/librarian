@@ -11,7 +11,7 @@ describe('#initialState', () => {
         expect(initialState).toBeObject();
     });
     it('has the corresponding attributes', () => {
-        expect(Object.keys(initialState)).toEqual(['auth', 'graphql', 'routing', 'search']);
+        expect(Object.keys(initialState)).toEqual(['auth', 'goodreads', 'graphql', 'routing', 'search']);
     });
     describe('#auth', () => {
         it('is the correspongind state', () => {

@@ -15,3 +15,4 @@ export const GOODREADS_URL_REQUEST_TOKEN = `${GOODREADS_HOST}/oauth/request_toke
 export const GOODREADS_URL_ACCESS_TOKEN = `${GOODREADS_HOST}/oauth/access_token`;
 export const GOODREADS_URL_GET_AUTH_USER = `${GOODREADS_HOST}/api/auth_user`;
 export const GOODREADS_URL_GET_BOOK_BY_ISBN = `${GOODREADS_HOST}/book/isbn/:isbn?key=:key`;
+export const GOODREADS_URL_GET_SHELVES = `${GOODREADS_HOST}/shelf/list`;

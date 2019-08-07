@@ -31,6 +31,14 @@ export default class GoodreadsClient {
         return response.data;
     }
 
+    public getShelves = async () => {
+        logger.info('getShelves');
+
+        const response = await axios.get(`${GoodreadsClient.GOODREADS_API_BASE_PATH}/shelves`);
+
+        return response.data;
+    }
+
     public getBookByISBN = async (isbn: number) => {
         logger.info('getBookByISBN');
 

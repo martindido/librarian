@@ -5,6 +5,7 @@ import signIn from './auth/signIn';
 import signOut from './auth/signOut';
 import signUp from './auth/signUp';
 import signUpConfirm from './auth/signUpConfirm';
+import getShelves from './goodreads/getShelves';
 import goodreadsSignIn from './goodreads/goodreadsSignIn';
 import goodreadsSignOut from './goodreads/goodreadsSignOut';
 import createGame from './graphql/createGame';
@@ -15,6 +16,7 @@ import listWorlds from './graphql/listWorlds';
 import search from './graphql/search';
 import updateGame from './graphql/updateGame';
 import updateWorld from './graphql/updateWorld';
+import loadShelves from './load/goodreads/getShelves';
 import loadGame from './load/graphql/getGame';
 import loadWorld from './load/graphql/getWorld';
 import loadWorlds from './load/graphql/listWorlds';
@@ -39,11 +41,13 @@ export const epics = combineEpics(
     signOut,
     goodreadsSignIn,
     goodreadsSignOut,
+    getShelves,
     listWorlds,
     createWorld,
     updateWorld,
     createGame,
     updateGame,
+    loadShelves,
     loadWorlds,
     loadWorld,
     getWorld,

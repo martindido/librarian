@@ -1,8 +1,14 @@
-import { loadGameAction, loadWorldsAction, loadWorldAction } from '../mocks/actions/load';
+import { loadGameAction, loadShelvesAction, loadWorldsAction, loadWorldAction } from '../mocks/actions/load';
 import { game } from '../mocks/game';
 import { world } from '../mocks/world';
 
 import * as actionCreators from './load';
+
+describe('.loadShelves', () => {
+    it('returns the corresponding action', () => {
+        expect(actionCreators.loadShelves()).toEqual(loadShelvesAction);
+    });
+});
 
 describe('.loadWorlds', () => {
     it('returns the corresponding action', () => {
